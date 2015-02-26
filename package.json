@@ -1,0 +1,26 @@
+{
+    "name":"ifttt-elasticsearch",
+    "description":"Connect your personal elasticsearch-server to ifttt",
+    "version":"0.0.1",
+    "private":true,
+    "author":{
+        "name":"Marco Grätsch",
+        "email":"magdev3.0@gmail.com",
+        "url":"https://plus.google.com/+MarcoGrätsch"
+    },
+    "main":"./bin/www",
+    "scripts":{
+        "start":"node ./bin/www"
+    },
+    "dependencies":{
+	    "body-parser":"~1.10.2",
+	    "cookie-parser":"~1.3.3",
+	    "debug":"~2.1.1",
+	    "express":"~4.11.1",
+	    "morgan":"~1.5.1",
+	    "serve-favicon":"~2.2.0",
+	    "express-ifttt-webhook":"~0.2.3",
+	    "elasticsearch":"~3.1.3",
+        "jade":"*"
+    }
+}

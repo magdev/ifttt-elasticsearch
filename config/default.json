@@ -1,0 +1,10 @@
+{
+    "elasticsearch":{
+        "host":"es.example.org",
+        "log":"trace"
+    },
+    "index": {
+        "name":"articles",
+        "type":"article"
+    }
+}
