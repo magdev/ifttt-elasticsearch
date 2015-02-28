@@ -22,18 +22,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(webhook(function(json, done) {
-    es.index({
-        index: (config.index.name || 'articles'),
-        type: (config.index.type || 'article'),
-        body: json
-    }, function(error, response) {
-        if (error) {
-            return done(error, response);
+app.use(webhook(
+    function(username, password, done) {
+        if (username === config.auth.username && password === config.auth.password) {
+            done(null, {username: username, auth: true});
         }
-        done();
-    });
-}));
+        done(null, false);
+    },
+	function(json, done) {
+	    es.index({
+	        index: (config.index.name || 'articles'),
+	        type: (config.index.type || 'article'),
+	        body: json
+	    }, function(error, response) {
+	        if (error) {
+	            return done(error, response);
+	        }
+	        done();
+	    });
+	}
+));
 
 app.use('/', routes);
 

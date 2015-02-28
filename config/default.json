@@ -3,8 +3,12 @@
         "host":"es.example.org",
         "log":"trace"
     },
-    "index": {
+    "index":{
         "name":"articles",
         "type":"article"
+    },
+    "auth":{
+        "username":"testuser",
+        "password":"changeme"
     }
 }
