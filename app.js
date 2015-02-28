@@ -38,7 +38,18 @@ var express = require('express'),
     config = require('./config/default.json'),
     app = express(),
     
-    es = new elasticsearch.Client(config.elasticsearch);
+    es = new elasticsearch.Client(config.elasticsearch),
+    
+    
+    parseData = function(json) {
+        if (typeof json.description == 'object' && json.description.source) {
+            json.source = json.description.source;
+            delete json.description.source;
+        } else {
+            json.source = 'common';
+        }
+        return json;
+    };
 
 
     
@@ -52,7 +63,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(webhook(
     function(username, password, done) {
         if (username === config.auth.username && password === config.auth.password) {
-            done(null, {username: username, auth: true});
+            done(null, {
+                username: username, 
+                auth: true
+            });
         }
         done(null, false);
     },
@@ -60,7 +74,7 @@ app.use(webhook(
 	    es.index({
 	        index: (config.index.name || 'mystuff'),
 	        type: (config.index.type || 'object'),
-	        body: json
+	        body: parseData(json)
 	    }, function(error, response) {
 	        if (error) {
 	            return done(error, response);
