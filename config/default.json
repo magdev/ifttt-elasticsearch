@@ -4,8 +4,8 @@
         "log":"trace"
     },
     "index":{
-        "name":"articles",
-        "type":"article"
+        "name":"mystuff",
+        "type":"object"
     },
     "auth":{
         "username":"testuser",
