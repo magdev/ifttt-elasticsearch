@@ -84,18 +84,18 @@ app.use(webhook(
         }
         done(null, false);
     },
-	function(json, done) {
-	    es.index({
-	        index: (config.index.name || 'mystuff'),
-	        type: (config.index.type || 'object'),
-	        body: parseData(json)
-	    }, function(error, response) {
-	        if (error) {
-	            return done(error, response);
-	        }
-	        done();
-	    });
-	}
+    function(json, done) {
+        es.index({
+            index: (config.index.name || 'mystuff'),
+            type: (config.index.type || 'object'),
+            body: parseData(json)
+        }, function(error, response) {
+            if (error) {
+                return done(error, response);
+            }
+            done();
+        });
+    }
 ));
 
 app.use('/', routes);
