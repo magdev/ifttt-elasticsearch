@@ -1,0 +1,10 @@
+extends _layout
+
+block header
+  title #{appdata.name}
+  
+block body
+  .section.no-pad-bot
+    h1.header.center Welcome to #{appdata.name}
+    p.center This is the personal Websearch of 
+      a(href='mailto:#{owner.email}', target='blank') #{owner.name}

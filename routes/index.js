@@ -29,12 +29,30 @@ var router = require('express').Router(),
     package = require('../package.json');
 
 router.get('/', function(req, res, next) {
-    res.json({
-        name: package.name,
-        description: package.description,
-        version: package.version,
-        author: package.author
-    });
+    res.render('index');
+});
+
+router.get('/about', function(req, res, next) {
+    res.render('about');
+});
+
+router.get('/search', function(req, res, next) {
+    if (req.query.q) {
+	    req.es.search({
+	        q: req.query.q
+	    }).then(function(body) {
+	        res.render('search', {
+		        hits: body.hits.hits,
+		        q: req.query.q
+		    });
+	    }, function (error) {
+	        console.trace(error.message);
+	    });
+	} else {
+	    res.render('search', {
+	       q: ''
+	    });
+	}
 });
 
 module.exports = router;

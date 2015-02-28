@@ -1,0 +1,21 @@
+{
+  "name":"ifttt-elasticsearch",
+    "description":"Connect your personal elasticsearch-server to ifttt",
+    "version":"0.0.1",
+  "authors": [
+    "Marco Grätsch <magdev3.0@gmail.com>"
+  ],
+  "license":"MIT",
+  "private":true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+      "materialize":"*",
+      "jquery":"*"
+  }
+}

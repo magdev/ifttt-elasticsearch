@@ -10,5 +10,12 @@
     "auth":{
         "username":"testuser",
         "password":"changeme"
+    },
+    "owner":{
+        "name":"Your Name",
+        "email":"your-email@example.org"
+    },
+    "app":{
+        "name":"IFTTT-Elasticsearch"
     }
 }
