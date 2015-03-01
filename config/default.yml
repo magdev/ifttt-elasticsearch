@@ -4,9 +4,8 @@ elasticsearch:
 index:
   name: mystuff
   type: object
-auth:
-  username: testuser
-  password: changeme
+users:
+  - { username: testuser, password: changeme, email: "testuser@example.com" }
 owner:
   name: "Your Name"
   email: "your-email@example.org"

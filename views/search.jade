@@ -2,17 +2,10 @@ extends _layout
 
 block header
   title Search | #{appdata.name}
+  meta(name='description', content='#{package.description}')
   
 block body
-  .section.no-pad-bot
-    .row
-      form.col.s12
-        .row
-          .input-field.col.m6.s12.offset-m3
-            input#search.validate(type='search', name='q', required, value=q)
-            label(for='search') Search Terms
-            button.waves-effect.waves-light.btn(type='submit') 
-              i.mdi-action-search
+  include _parts/search
               
   if result
     p Total results: #{result.total}
