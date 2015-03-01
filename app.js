@@ -42,6 +42,8 @@ var express = require('express'),
     
     
     parseData = function(json) {
+        delete json.username;
+        delete json.password;
         if (typeof json.description == 'object' && json.description.source) {
             json.source = json.description.source;
             delete json.description.source;
