@@ -42,7 +42,7 @@ router.get('/search', function(req, res, next) {
 	        q: req.query.q
 	    }).then(function(body) {
 	        res.render('search', {
-		        hits: body.hits.hits,
+		        result: body.hits,
 		        q: req.query.q
 		    });
 	    }, function (error) {
