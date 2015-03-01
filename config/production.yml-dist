@@ -1,0 +1,5 @@
+elasticsearch:
+  host: "es-prod.example.org"
+auth:
+  username: "testuser"
+  password: "changeme"

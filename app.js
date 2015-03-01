@@ -31,11 +31,13 @@ var express = require('express'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
+    compression = require('compression'),
+    session = require('express-session'),
     webhook = require('express-ifttt-webhook'),
     elasticsearch = require('elasticsearch'),
     
     routes = require('./routes/index'),
-    config = require('./config/default.json'),
+    config = require('config'),
     app = express(),
     
     es = new elasticsearch.Client(config.elasticsearch),
@@ -56,13 +58,23 @@ var express = require('express'),
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-      
+app.set('trust proxy', 1)
+
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+    secret: config.session.secret || 'secretsessionkey',
+    rolling: true,
+    resave: true,
+    saveUninitialized: true,
+    cookie: { secure: true }
+}))
 
 app.use(function(req, res, next) {
     req.config = config;
