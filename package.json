@@ -14,7 +14,6 @@
         "type":"git",
         "url":"https://github.com/magdev/ifttt-elasticsearch.git"
     },
-    "private":true,
     "author":{
         "name":"Marco Grätsch",
         "email":"magdev3.0@gmail.com",
