@@ -37,7 +37,6 @@
         "express-ifttt-webhook":"~0.2.3",
         "jade":"*",
         "morgan":"~1.5.1",
-        "multer":"^0.1.8",
         "passport":"^0.2.1",
         "passport-local":"^1.0.0",
         "serve-favicon":"~2.2.0",
