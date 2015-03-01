@@ -22,5 +22,4 @@ block body
           li.collection-item.avatar
             img.circle(width='32', height='32', src='/img/logo/#{row._source.source}.png')
             span.title #{row._source.title}
-            p.truncate
-              #{row._source.description.content}
+            p.truncate #{row._source.description.content}
