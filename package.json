@@ -7,7 +7,7 @@
         "search",
         "indexing"
     ],
-    "version":"0.0.1",
+    "version":"0.0.2",
     "homepage":"https://github.com/magdev/ifttt-elasticsearch",
     "bugs":"https://github.com/magdev/ifttt-elasticsearch/issues",
     "repository":{
@@ -21,7 +21,8 @@
     },
     "main":"./bin/www",
     "scripts":{
-        "start":"node ./bin/www"
+        "start":"node ./bin/www",
+        "postinstall":"bower install"
     },
     "dependencies":{
         "body-parser":"~1.10.2",
