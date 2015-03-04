@@ -16,3 +16,22 @@ block body
             img.circle(width='32', height='32', src='/img/logo/#{row._source.source}.png')
             span.title #{row._source.title}
             p.truncate #{row._source.description.content}
+            
+      - if (result.total > result.hits.length) 
+        ul.pagination
+          if from > 0
+            li: a(href="?q=#{q}&f=#{prev}&s=#{size}")
+              i.mdi-navigation-chevron-left
+          else 
+            li.disabled: span
+              i.mdi-navigation-chevron-left
+              
+          if next < result.total
+            li: a(href="?q=#{q}&f=#{next}&s=#{size}")
+              i.mdi-navigation-chevron-right
+          else 
+            li.disabled: span
+              i.mdi-navigation-chevron-right
+            
+            
+              
