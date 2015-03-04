@@ -35,7 +35,8 @@ require('./lib/auth')(app, config);
 
 var es = require('./lib/elasticsearch')(app, config);
 require('./lib/ifttt')(app, config, es);
-require('./lib/web')(app, config);
+
+app.use('/', require('./lib/routes'));
 require('./lib/errors')(app, config);
 
 module.exports = app;
