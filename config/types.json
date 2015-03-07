@@ -25,7 +25,7 @@
                 "index":"not_analyzed"
             },
             "datetime":{
-                "type":"datetime"
+                "type":"date"
             },
 	        "_timestamp":{ 
 	            "enabled":true 
@@ -48,7 +48,7 @@
                 "store":true
             },
             "datetime":{
-                "type":"datetime"
+                "type":"date"
             },
             "_timestamp":{ 
                 "enabled":true 
@@ -81,7 +81,7 @@
                 "index":"not_analyzed"
             },
             "datetime":{
-                "type":"datetime"
+                "type":"date"
             },
             "_timestamp":{ 
                 "enabled":true 
@@ -109,7 +109,7 @@
                 "store":true
             },
             "datetime":{
-                "type":"datetime"
+                "type":"date"
             },
             "_timestamp":{ 
                 "enabled":true 
@@ -136,7 +136,7 @@
                 "store":true
             },
             "datetime":{
-                "type":"datetime"
+                "type":"date"
             },
             "_timestamp":{ 
                 "enabled":true 
