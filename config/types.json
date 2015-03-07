@@ -3,13 +3,11 @@
         "properties":{
             "title":{
                 "type":"string", 
-                "store":true,
-                "index_name":"text"
+                "store":true
             },
             "description":{
                 "type":"string", 
-                "store":true,
-                "index_name":"text" 
+                "store":true
             },
             "datasource":{
                 "type":"string", 
@@ -36,8 +34,7 @@
         "properties":{
             "description":{
                 "type":"string", 
-                "store":true,
-                "index_name":"text" 
+                "store":true
             },
             "datasource":{
                 "type":"string", 
@@ -59,13 +56,11 @@
         "properties":{
             "title":{
                 "type":"string", 
-                "store":true,
-                "index_name":"text" 
+                "store":true
             },
             "description":{
                 "type":"string", 
-                "store":true,
-                "index_name":"text" 
+                "store":true
             },
             "datasource":{
                 "type":"string", 
@@ -92,8 +87,7 @@
         "properties":{
             "title":{
                 "type":"string", 
-                "store":true,
-                "index_name":"text" 
+                "store":true
             },
             "embed":{
                 "type":"string", 
