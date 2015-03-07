@@ -24,6 +24,9 @@
                 "store":true,
                 "index":"not_analyzed"
             },
+            "datetime":{
+                "type":"datetime"
+            },
 	        "_timestamp":{ 
 	            "enabled":true 
 	        }
@@ -43,6 +46,9 @@
             "url":{
                 "type":"string",
                 "store":true
+            },
+            "datetime":{
+                "type":"datetime"
             },
             "_timestamp":{ 
                 "enabled":true 
@@ -74,6 +80,9 @@
                 "store":true,
                 "index":"not_analyzed"
             },
+            "datetime":{
+                "type":"datetime"
+            },
             "_timestamp":{ 
                 "enabled":true 
             }
@@ -99,6 +108,9 @@
                 "type":"string",
                 "store":true
             },
+            "datetime":{
+                "type":"datetime"
+            },
             "_timestamp":{ 
                 "enabled":true 
             }
@@ -122,6 +134,9 @@
             "publicUrl":{
                 "type":"string",
                 "store":true
+            },
+            "datetime":{
+                "type":"datetime"
             },
             "_timestamp":{ 
                 "enabled":true 
