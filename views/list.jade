@@ -1,0 +1,19 @@
+extends _layout
+
+
+block header
+  title Recent | #{appdata.name}
+  meta(name='description', content='#{package.description}')
+  
+
+block body
+  .section.no-pad-bot
+    h1.header.center Recent
+    
+  ul.collection
+    each row in result.hits
+      include _parts/item/list.jade
+            
+            
+  div !{pager}
+    

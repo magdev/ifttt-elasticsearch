@@ -1,7 +1,7 @@
 extends _layout
 
 block header
-  title Search | #{appdata.name}
+  title Search
   meta(name='description', content='#{package.description}')
   
 block body
@@ -12,11 +12,7 @@ block body
     if result.total > 0
       ul.collection
         each row in result.hits
-          li.collection-item.avatar
-            img.circle(width='32', height='32', src='/img/logo/#{row._source.source}.png')
-            span.title #{row._source.title}
-            p.truncate #{row._source.description.content}
-            
+          include _parts/item/list.jade
       div !{pager}
             
             

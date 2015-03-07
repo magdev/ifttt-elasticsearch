@@ -2,8 +2,8 @@ elasticsearch:
   host: "es.example.org"
   log: trace
 index:
-  name: mystuff
-  type: object
+  name: ifttt
+  type: common
 users:
   - { username: testuser, password: changeme, email: "testuser@example.com" }
 owner:
@@ -11,5 +11,9 @@ owner:
   email: "your-email@example.org"
 app:
   name: "IFTTT-Elasticsearch"
+  ui:
+    github:
+      enable: true
+      repository: "magdev/ifttt-elasticsearch"
 session:
   secret: verysecretsessionkey

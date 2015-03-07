@@ -1,10 +1,23 @@
 doctype html
 html
-  head
+  head(profile='http://a9.com/-/spec/opensearch/1.1/')
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
     link(type='text/css', rel='stylesheet', href='/assets/materialize/dist/css/materialize.min.css', media='screen,projection')
+    link(rel='shortcut icon', sizes='196x196', href='/img/icon/icon-196.png')
+    link(rel='shortcut icon', sizes='128x128', href='/img/icon-128.png')
+    link(rel='shortcut icon', sizes='96x96', href='/img/icon-96.png')
+    link(rel='shortcut icon', sizes='72x72', href='/img/icon-72.png')
+    link(rel='shortcut icon', sizes='48x48', href='/img/icon-48.png')
+    link(rel='shortcut icon', sizes='32x32', href='/img/icon-32.png')
+    link(rel='shortcut icon', sizes='16x16', href='/img/icon-16.png')
+    link(rel='apple-touch-icon-precomposed', sizes='114x114', href='/img/icon-114.png')
+    link(rel='apple-touch-icon-precomposed', sizes='72x72', href='/img/icon-72.png')
+    link(rel='apple-touch-icon-precomposed', href='/img/icon-57.png')
+    meta(name='mobile-web-app-capable' content='yes')
+    meta(name='apple-mobile-web-app-capable' content='yes')
+    link(rel='search', type='application/opensearchdescription+xml', href='#{baseurl}/opensearch.xml', title='#{appdata.name}')
     block header
     
   body
@@ -14,17 +27,19 @@ html
           a#logo-container.brand-logo(href='/search') #{appdata.name}
             if (user)
               ul.right.hide-on-med-and-down
+                li: a(href='/recent') Recent
                 li: a(href='/search') Search
                 li: a(href='/logout') Logout
 
               ul#nav-mobile.side-nav
+                li: a(href='/recent') Recent
                 li: a(href='/search') Search
                 li: a(href='/logout') Logout
               a.button-collapse(href='#', data-activates='nav-mobile')
                 i.mdi-navigation-menu
             
-      if (package.repository)
-        a(href=package.repository.url, target='_blank')
+      if (appdata.ui.github.enable && appdata.ui.github.repository)
+        a(href='https://github.com/#{appdata.ui.github.repository}.git', target='_blank')
           img(style='position: absolute; top: 0; right: 0; border: 0;', src='https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67', alt='Fork me on GitHub', data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png')
     
     main

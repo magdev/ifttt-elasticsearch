@@ -1,0 +1,14 @@
+li.collection-item.avatar(data-id='#{row._id}')
+  img.circle(width='32', height='32', src='/img/logo/#{row._source.datasource}.png')
+  if row._source.url
+    a(href=row._source.url, target='_blank')
+      span.title #{row._source.title}
+  if row._source.publicUrl
+    a(href=row._source.publicUrl, target='_blank')
+      span.title #{row._source.title}
+  if row._source.description 
+    p.truncate #{row._source.description}
+  if row._source.message 
+    p #{row._source.message}
+  a.secondary-content.delete(href="javascript:void(0);", data-id='#{row._id}', data-index='#{row._index}', data-type='#{row._type}')
+    i.mdi-action-delete
