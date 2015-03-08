@@ -2,9 +2,9 @@
   .modal-content
     h3 #{appdata.name} Info
     if appdata.description
-      p #{appdata.description}
+      p.flow-text #{appdata.description}
     else 
-      p #{package.description}
+      p.flow-text #{package.description}
     .row
       .col.s12.m6
         h4 Bookmarklet
@@ -12,6 +12,9 @@
       .col.s12.m6
         h4 Search-Plugin
         p: a.btn.add-search(href='#{baseurl}/opensearch.xml') Add Search-Plugin
-      
+    .row
+      .col.s12.m12
+        h4 Elasticsearch
+        p: a.waves-effect.btn(href='#{config.elasticsearch.host}/_plugin/head', target='_blank') Open in Browser
   .modal-footer
     a.waves-effect.btn.modal-action.modal-close(href='#') Close

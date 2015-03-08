@@ -1,4 +1,8 @@
 extends _layout
 
 block body
-  h1 #{document._source.title}
+  h1: a(href=document._source.url, target='_blank') #{document._source.title}
+  if document._source.image
+    p.flow-text: img.responsive-img(src=document._source.image, alt='')
+  if document._source.description
+    p.flow-text #{document._source.description}

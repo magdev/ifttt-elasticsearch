@@ -12,6 +12,10 @@ owner:
 app:
   name: "IFTTT-Elasticsearch"
   ui:
+    search:
+      style: list
+    recent:
+      style: list
     github:
       enable: true
       repository: "magdev/ifttt-elasticsearch"

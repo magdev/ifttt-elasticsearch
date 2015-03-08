@@ -12,7 +12,10 @@ block body
     if result.total > 0
       ul.collection
         each row in result.hits
-          include _parts/item/list.jade
+          if appdata.ui.recent.style == 'card'
+            include _parts/item/card.jade
+          else
+            include _parts/item/list.jade
       div !{pager}
             
             

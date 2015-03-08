@@ -6,9 +6,7 @@ li.collection-item.avatar(data-id='#{row._id}')
   if row._source.publicUrl
     a(href=row._source.publicUrl, target='_blank')
       span.title #{row._source.title}
-  if row._source.description 
-    p.truncate !{row._source.description}
   if row._source.message 
-    p #{row._source.message}
-  a.secondary-content.delete(href="javascript:void(0);", data-id='#{row._id}', data-index='#{row._index}', data-type='#{row._type}')
-    i.mdi-action-delete
+    p.flow-text #{row._source.message}
+  a.secondary-content.view(href='/view/#{row._id}')
+    i.mdi-action-pageview
