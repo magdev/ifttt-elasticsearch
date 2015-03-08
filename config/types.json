@@ -27,7 +27,11 @@
             },
 	        "_timestamp":{ 
 	            "enabled":true 
-	        }
+	        },
+	        "username":{
+                "type":"string", 
+                "store":true
+            }
         }
     },
     "message":{
@@ -49,6 +53,10 @@
             },
             "_timestamp":{ 
                 "enabled":true 
+            },
+            "username":{
+                "type":"string", 
+                "store":true
             }
         }
     },
@@ -80,6 +88,10 @@
             },
             "_timestamp":{ 
                 "enabled":true 
+            },
+            "username":{
+                "type":"string", 
+                "store":true
             }
         }
     },
@@ -107,6 +119,10 @@
             },
             "_timestamp":{ 
                 "enabled":true 
+            },
+            "username":{
+                "type":"string", 
+                "store":true
             }
         }
     },
@@ -114,8 +130,7 @@
         "properties":{
             "title":{
                 "type":"string", 
-                "store":true,
-                "index_name":"text" 
+                "store":true
             },
             "datasource":{
                 "type":"string", 
@@ -134,6 +149,33 @@
             },
             "_timestamp":{ 
                 "enabled":true 
+            },
+            "username":{
+                "type":"string", 
+                "store":true
+            }
+        }
+    },
+    "link":{
+        "properties":{
+            "title":{
+                "type":"string", 
+                "store":true
+            },
+            "datasource":{
+                "type":"string", 
+                "store":true 
+            },
+            "url":{
+                "type":"string",
+                "store":true
+            },
+            "_timestamp":{ 
+                "enabled":true 
+            },
+            "username":{
+                "type":"string", 
+                "store":true
             }
         }
     }
