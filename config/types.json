@@ -178,5 +178,48 @@
                 "store":true
             }
         }
+    },
+    "issue":{
+        "properties":{
+            "title":{
+                "type":"string", 
+                "store":true
+            },
+            "description":{
+                "type":"string", 
+                "store":true
+            },
+            "datasource":{
+                "type":"string", 
+                "store":true 
+            },
+            "url":{
+                "type":"string",
+                "store":true
+            },
+            "author":{
+                "type":"string", 
+                "store":true
+            },
+            "authorImage":{
+                "type":"string",
+                "store":true,
+                "index":"not_analyzed"
+            },
+            "assignedTo":{
+                "type":"string", 
+                "store":true
+            },
+            "datetime":{
+                "type":"date"
+            },
+            "_timestamp":{ 
+                "enabled":true 
+            },
+            "username":{
+                "type":"string", 
+                "store":true
+            }
+        }
     }
 }
