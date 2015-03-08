@@ -1,0 +1,41 @@
+doctype html
+html
+  head(profile='http://a9.com/-/spec/opensearch/1.1/')
+    include _parts/header.jade
+    link(rel='stylesheet', href='https://#{appdata.ui.github.cdn}/markserbol/urlive/master/jquery.urlive.css')
+    link(rel='search', type='application/opensearchdescription+xml', href='#{baseurl}/opensearch.xml', title='#{appdata.name}')
+    title Push to #{appdata.name}
+    
+  body
+    header
+      nav(class='light-blue lighten-1', role='navigation')
+        .nav-wrapper.container
+          span#logo-container.brand-logo.truncate Push to #{appdata.name}
+          
+    main
+      .container
+        - if (message && message != '')
+          #message(style='display:none') #{message}
+        .row
+          form(action='/share', method='post')
+            .row
+              .input-field.col.s12
+                input#url(type='url', name='url', required, readonly, value=url)
+                label(for='url') URL
+            .row
+              .col.s12
+                .preview
+              input#title(type='hidden', name='title')
+              input#description(type='hidden', name='description')
+              input#image(type='hidden', name='image')
+              input#type(type='hidden', name='type', value='common')
+              input#datasource(type='hidden', name='datasource', value='web')
+            .row
+              .col.s12
+                button.waves-effect.waves-light.btn(type='submit') Push 
+                  i.mdi-content-save 
+        
+    script(src='/assets/jquery/dist/jquery.min.js')
+    script(src='/assets/materialize/dist/js/materialize.min.js')
+    script(src='https://#{appdata.ui.github.cdn}/markserbol/urlive/master/jquery.urlive.min.js')
+    script(src='/js/share.js')

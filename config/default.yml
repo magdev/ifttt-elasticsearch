@@ -15,5 +15,6 @@ app:
     github:
       enable: true
       repository: "magdev/ifttt-elasticsearch"
+      cdn: "cdn.rawgit.com"
 session:
   secret: verysecretsessionkey

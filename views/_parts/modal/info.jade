@@ -1,0 +1,17 @@
+#info.modal.modal-fixed-footer
+  .modal-content
+    h3 #{appdata.name} Info
+    if appdata.description
+      p #{appdata.description}
+    else 
+      p #{package.description}
+    .row
+      .col.s12.m6
+        h4 Bookmarklet
+        p: a.btn.btn-bookmarklet(href=bookmarklet()) Push to #{appdata.name}
+      .col.s12.m6
+        h4 Search-Plugin
+        p: a.btn.add-search(href='#{baseurl}/opensearch.xml') Add Search-Plugin
+      
+  .modal-footer
+    a.waves-effect.btn.modal-action.modal-close(href='#') Close
