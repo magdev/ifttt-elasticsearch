@@ -14,7 +14,7 @@ html
           
     main
       .container
-        - if (success === null && !error) 
+        - if (!success && !error) 
           .row
             form(action='/share', method='post')
               .row
@@ -33,10 +33,10 @@ html
                 .col.s12
                   button.waves-effect.waves-light.btn(type='submit') Push 
                     i.mdi-content-save 
-        - if (success === true && !error) 
+        - if (success && !error) 
           script.
             window.close();
-        - if (success === false && error) 
+        - if (!success && error) 
           script.
              toast(error.message, 8000, '', function() {
                  window.close();
