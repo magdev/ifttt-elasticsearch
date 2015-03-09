@@ -14,7 +14,10 @@ html
           
     main
       .container
-        - if (!success && !error) 
+        if success
+          script.
+            window.close();
+        else
           .row
             form(action='/share', method='post')
               .row
@@ -33,14 +36,7 @@ html
                 .col.s12
                   button.waves-effect.waves-light.btn(type='submit') Push 
                     i.mdi-content-save 
-        - if (success && !error) 
-          script.
-            window.close();
-        - if (!success && error) 
-          script.
-             toast(error.message, 8000, '', function() {
-                 window.close();
-             });
+        
     script(src='/assets/jquery/dist/jquery.min.js')
     script(src='/assets/materialize/dist/js/materialize.min.js')
     script(src='https://#{appdata.ui.github.cdn}/markserbol/urlive/master/jquery.urlive.min.js')
