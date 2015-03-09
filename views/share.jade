@@ -14,8 +14,6 @@ html
           
     main
       .container
-        - if (message && message != '')
-          #message(style='display:none') #{message}
         if success
           script.
             window.close();
