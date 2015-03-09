@@ -1,5 +1,9 @@
 extends _layout
 
+
+block header
+  title #{document._source.title} | #{appdata.name}
+  
 block body
   .row
     .col.s12
