@@ -19,7 +19,7 @@
     .card-date.grey-text.lighten-1 
       em: small #{moment(new Date(row._source.timestamp)).fromNow()} 
     .card-content.grey-text
-      - if (!row._source.image && !row._source.publicUrl)
+      - if ((!row._source.image || !imageNotBlank(row._source.image)) && !row._source.publicUrl)
         if row._type != 'message' && row._type != 'media'
           a(href=row._source.url)
             span.card-title.grey-text.text-darken-4 #{row._source.title}
