@@ -6,3 +6,6 @@ block body
     p.flow-text: img.responsive-img(src=document._source.image, alt='')
   if document._source.description
     p.flow-text #{document._source.description}
+  if document._source.embed
+    - var embed = document._source.embed.replace(/[\\]*/g, '')
+    .row!= embed

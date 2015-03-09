@@ -10,13 +10,13 @@ block body
   if result
     p Total results: #{result.total}
     if result.total > 0
-      ul.collection
-        each row in result.hits
-          if appdata.ui.recent.style == 'card'
-            include _parts/item/card.jade
-          else
-            include _parts/item/list.jade
-      div !{pager}
+      if appdata.ui.search.style == 'list'
+        include _parts/list/collection.jade
+      else
+        include _parts/list/cards.jade
+            
+            
+      .row !{pager}
             
             
               

@@ -2,11 +2,14 @@ li.collection-item.avatar(data-id='#{row._id}')
   img.circle(width='32', height='32', src='/img/logo/#{row._source.datasource}.png')
   if row._source.url
     a(href=row._source.url, target='_blank')
-      span.title #{row._source.title}
+      if row._type == 'message'
+        span.title #{row._source.datetime}
+      else
+        span.title #{row._source.title}
   if row._source.publicUrl
     a(href=row._source.publicUrl, target='_blank')
       span.title #{row._source.title}
-  if row._source.message 
-    p.flow-text #{row._source.message}
+  if row._type == 'message' 
+    p !{row._source.description}
   a.secondary-content.view(href='/view/#{row._id}')
-    i.mdi-action-pageview
+    i.mdi-action-pageview.small

@@ -1,0 +1,33 @@
+.col.s12.m6
+  .card
+    if row._source.image
+      .card-image
+        a(href=row._source.url)
+          img(src=row._source.image alt='')
+          if row._type != 'message'
+            span.card-title #{row._source.title}
+    else if row._source.publicUrl
+      .card-image
+        a(href=row._source.publicUrl)
+          img(src=row._source.publicUrl alt='')
+          if row._type != 'message'
+            span.card-title #{row._source.title}
+    if row._type == 'media'
+      if row._source.embed
+        - var embed = row._source.embed.replace(/[\\]*/g, '')
+        .card-media!= embed
+    .card-date.grey-text.lighten-1 
+      em: small #{moment(new Date(row._source.timestamp)).fromNow()} 
+    .card-content.grey-text
+      - if (!row._source.image && !row._source.publicUrl)
+        if row._type != 'message' && row._type != 'media'
+          a(href=row._source.url)
+            span.card-title.grey-text.text-darken-4 #{row._source.title}
+      if row._type == 'media'
+        p.flow-text.truncate #{row._source.title}
+      else if row._source.description
+        p.truncate.flow-text #{row._source.description}
+    .card-action
+      a(href='/view/#{row._id}') View
+      a.delete(href='#', data-id=row._id) Delete
+      img.circle.datasource-img(width='26', height='26', src='/img/logo/#{row._source.datasource}.png', title='Source: #{row._source.datasource}')

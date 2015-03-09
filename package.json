@@ -37,6 +37,7 @@
         "express-ifttt-webhook":"~0.2.3",
         "jade":"*",
         "jsesc":"^0.5.0",
+        "moment":"^2.9.0",
         "morgan":"~1.5.1",
         "pagination":"^0.4.3",
         "passport":"^0.2.1",

@@ -1,0 +1,30 @@
+.card .card-date {
+	padding: 0 20px;
+	line-height: 2;
+}
+.card .card-title {
+    font-weight: 500;
+}
+.card .card-image .card-title {
+	text-shadow: 0 0 6px #888;
+}
+.card .card-action .datasource-img {
+	float: right;
+}
+.card .card-media {
+    position: relative;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+}
+    
+.card .card-media iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+}

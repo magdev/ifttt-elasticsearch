@@ -23,10 +23,13 @@
                 "index":"not_analyzed"
             },
             "datetime":{
-                "type":"date"
+                "type":"string",
+                "store":true,
+                "index":"not_analyzed"
             },
-	        "_timestamp":{ 
-	            "enabled":true 
+	        "timestamp":{ 
+	            "type":"date",
+                "store":true 
 	        },
 	        "username":{
                 "type":"string", 
@@ -49,10 +52,13 @@
                 "store":true
             },
             "datetime":{
-                "type":"date"
+                "type":"string",
+                "store":true,
+                "index":"not_analyzed"
             },
-            "_timestamp":{ 
-                "enabled":true 
+            "timestamp":{ 
+                "type":"date",
+                "store":true 
             },
             "username":{
                 "type":"string", 
@@ -84,10 +90,13 @@
                 "index":"not_analyzed"
             },
             "datetime":{
-                "type":"date"
+                "type":"string",
+                "store":true,
+                "index":"not_analyzed"
             },
-            "_timestamp":{ 
-                "enabled":true 
+            "timestamp":{ 
+                "type":"date",
+                "store":true 
             },
             "username":{
                 "type":"string", 
@@ -115,10 +124,13 @@
                 "store":true
             },
             "datetime":{
-                "type":"date"
+                "type":"string",
+                "store":true,
+                "index":"not_analyzed"
             },
-            "_timestamp":{ 
-                "enabled":true 
+            "timestamp":{ 
+                "type":"date",
+                "store":true 
             },
             "username":{
                 "type":"string", 
@@ -145,10 +157,13 @@
                 "store":true
             },
             "datetime":{
-                "type":"date"
+                "type":"string",
+                "store":true,
+                "index":"not_analyzed"
             },
-            "_timestamp":{ 
-                "enabled":true 
+            "timestamp":{ 
+                "type":"date",
+                "store":true 
             },
             "username":{
                 "type":"string", 
@@ -170,8 +185,9 @@
                 "type":"string",
                 "store":true
             },
-            "_timestamp":{ 
-                "enabled":true 
+            "timestamp":{ 
+                "type":"date",
+                "store":true 
             },
             "username":{
                 "type":"string", 
@@ -211,10 +227,13 @@
                 "store":true
             },
             "datetime":{
-                "type":"date"
+                "type":"string",
+                "store":true,
+                "index":"not_analyzed"
             },
-            "_timestamp":{ 
-                "enabled":true 
+            "timestamp":{ 
+                "type":"date",
+                "store":true 
             },
             "username":{
                 "type":"string", 

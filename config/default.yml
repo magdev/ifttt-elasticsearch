@@ -11,11 +11,12 @@ owner:
   email: "your-email@example.org"
 app:
   name: "IFTTT-Elasticsearch"
+  description: "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you."
   ui:
-    search:
-      style: list
     recent:
-      style: list
+      style: card
+    search:
+      style: card
     github:
       enable: true
       repository: "magdev/ifttt-elasticsearch"
