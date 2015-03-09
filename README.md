@@ -1,9 +1,11 @@
 # ifttt-elasticsearch
 
-
 Index all your stuff with IFTTT and Elasticsearch.
 
-**WARNING: This prototype is not ready for production use due to the lack of any security features! It's just an experimental developer version!**
+
+## Setup
+
+To run this application you need a running elasticsearch instance. 
 
 ## Usage
 

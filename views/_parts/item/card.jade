@@ -26,7 +26,8 @@
       if row._type == 'media'
         p.flow-text.truncate #{row._source.title}
       else if row._source.description
-        p.truncate.flow-text #{row._source.description}
+        - var description = row._source.description.replace(/\\n/g, '')
+        p.truncate.flow-text!= description
     .card-action
       a(href='/view/#{row._id}') View
       a.delete(href='#', data-id=row._id) Delete

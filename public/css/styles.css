@@ -5,6 +5,10 @@
 .card .card-title {
     font-weight: 500;
 }
+
+.card .card-content img {
+    display: none;
+}
 .card .card-image .card-title {
 	text-shadow: 0 0 6px #888;
 }
