@@ -33,7 +33,7 @@ html
                 .col.s12
                   button.waves-effect.waves-light.btn(type='submit') Push 
                     i.mdi-content-save 
-        - if (success === true) 
+        - if (success === true && !error) 
           script.
             window.close();
         - if (success === false && error) 
