@@ -1,6 +1,6 @@
 .col.s12.m6
   .card
-    if row._source.image
+    if row._source.image && imageNotBlank(row._source.image)
       .card-image
         a(href=row._source.url)
           img(src=row._source.image alt='')
