@@ -23,7 +23,8 @@
     padding-bottom: 56.25%;
 }
     
-.card .card-media iframe {
+.card .card-media iframe,
+.card .card-media object {
     position: absolute;
     top: 0;
     left: 0;
