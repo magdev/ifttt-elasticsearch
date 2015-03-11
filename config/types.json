@@ -66,6 +66,40 @@
             }
         }
     },
+    "tweet":{
+        "properties":{
+            "description":{
+                "type":"string", 
+                "store":true
+            },
+            "embed":{
+                "type":"string", 
+                "store":true,
+                "index":"not_analyzed"
+            },
+            "datasource":{
+                "type":"string", 
+                "store":true 
+            },
+            "url":{
+                "type":"string",
+                "store":true
+            },
+            "datetime":{
+                "type":"string",
+                "store":true,
+                "index":"not_analyzed"
+            },
+            "timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
+            "username":{
+                "type":"string", 
+                "store":true
+            }
+        }
+    },
     "article":{
         "properties":{
             "title":{
