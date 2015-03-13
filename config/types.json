@@ -34,6 +34,10 @@
 	        "username":{
                 "type":"string", 
                 "store":true
+            },
+            "tags":{
+                "type":"string", 
+                "store":true
             }
         }
     },
@@ -61,6 +65,10 @@
                 "store":true 
             },
             "username":{
+                "type":"string", 
+                "store":true
+            },
+            "tags":{
                 "type":"string", 
                 "store":true
             }
@@ -95,6 +103,10 @@
                 "store":true 
             },
             "username":{
+                "type":"string", 
+                "store":true
+            },
+            "tags":{
                 "type":"string", 
                 "store":true
             }
@@ -135,6 +147,10 @@
             "username":{
                 "type":"string", 
                 "store":true
+            },
+            "tags":{
+                "type":"string", 
+                "store":true
             }
         }
     },
@@ -167,6 +183,10 @@
                 "store":true 
             },
             "username":{
+                "type":"string", 
+                "store":true
+            },
+            "tags":{
                 "type":"string", 
                 "store":true
             }
@@ -202,6 +222,10 @@
             "username":{
                 "type":"string", 
                 "store":true
+            },
+            "tags":{
+                "type":"string", 
+                "store":true
             }
         }
     },
@@ -224,6 +248,10 @@
                 "store":true 
             },
             "username":{
+                "type":"string", 
+                "store":true
+            },
+            "tags":{
                 "type":"string", 
                 "store":true
             }
@@ -270,6 +298,10 @@
                 "store":true 
             },
             "username":{
+                "type":"string", 
+                "store":true
+            },
+            "tags":{
                 "type":"string", 
                 "store":true
             }
