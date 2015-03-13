@@ -31,7 +31,7 @@ var express = require('express'),
 
 
 require('./lib/express')(app, config);
-require('./middlewares')(app, config);
+require('./lib/middlewares')(app, config);
 require('./lib/auth')(app, config);
 
 var es = require('./lib/elasticsearch')(app, config);
