@@ -1,5 +1,5 @@
 .col.s12.m6
-  .card
+  .card.item(data-id=row._id, data-index=row._index, data-type=row._type)
     if row._source.image && imageNotBlank(row._source.image)
       .card-image
         a(href=row._source.url, target='_blank')
@@ -18,7 +18,7 @@
         .card-media!= embed
     .card-date.grey-text.lighten-1 
       em: small #{moment(new Date(row._source.timestamp)).fromNow()} 
-    .card-content.grey-text
+    .card-content.darkgrey-text
       - if ((!row._source.image || !imageNotBlank(row._source.image)) && !row._source.publicUrl)
         if row._type != 'message' && row._type != 'media'
           a(href=row._source.url, target='_blank')
@@ -28,7 +28,16 @@
       else if row._source.description
         - var description = row._source.description.replace(/\\n/g, '')
         p.truncate.flow-text!= description
+      if row._source.datetime
+        p
+          em: small.grey-text Article from #{row._source.datetime}
+      if row._source.url
+        p.truncate
+          small: a.green-text(href=row._source.url, target='_blank', title='#{row._source.url}') #{row._source.url}
+      else if row._source.publicUrl
+        p.truncate
+          small: a.green-text(href=row._source.publicUrl, target='_blank', title='#{row._source.publicUrl}') #{row._source.publicUrl}
     .card-action
       a(href='/view/#{row._id}') View
-      a.delete(href='#', data-id=row._id) Delete
+      a.delete(href='#') Delete
       img.circle.datasource-img(width='26', height='26', src='/img/logo/#{row._source.datasource}.png', title='Source: #{row._source.datasource}')
