@@ -30,4 +30,12 @@
 			};
         });
     });
+    $('.infsc-container').infinitescroll({
+        navSelector: '.pagination',
+        nextSelector: '.paginator-next',
+        itemSelector: '.item',
+        donetext: '',
+        loadingText: '',
+        loadingImg: ''
+    });
 })(jQuery);
