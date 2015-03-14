@@ -33,7 +33,7 @@
     $('.infsc-container').infinitescroll({
         navSelector: '.pagination',
         nextSelector: '.paginator-next',
-        itemSelector: '.infsc-container .col',
+        itemSelector: '.infsc-item',
         donetext: '',
         loadingText: '',
         loadingImg: ''

@@ -1,4 +1,4 @@
-li.collection-item.avatar.item(data-id=row._id, data-index=row._index, data-type=row._type)
+li.collection-item.avatar.item.infsc-item(data-id=row._id, data-index=row._index, data-type=row._type)
   img.circle(width='32', height='32', src='/img/logo/#{row._source.datasource}.png')
   if row._source.url
     a(href=row._source.url, target='_blank')
