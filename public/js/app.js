@@ -38,4 +38,18 @@
         loadingText: '',
         loadingImg: ''
     });
+    $('.btn-add').click(function(ev) {
+        ev.preventDefault();
+        window.open('/share', 'indexall', 'locationbar=yes,width=480px,height=500px,statusbar=no,menubar=no,scrollbars=yes,toolbar=no,resizable=yes')
+    });
+    /*$('.share-button').dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrain_width: false,
+	    hover: true,
+	    alignment: 'right',
+	    gutter: 0,
+	    belowOrigin: true
+    });
+    var shr = new Share();*/
 })(jQuery);

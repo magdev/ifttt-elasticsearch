@@ -23,15 +23,16 @@ html
           #message(style='display:none') #{message}
         block body
         
-        //-.fixed-action-btn(style='bottom: 45px; right: 24px;')
-        //-  a.btn-floating.btn-large.waves-effect.waves-light.red
-        //-    i.mdi-content-add
+        .fixed-action-btn(style='bottom: 45px; right: 24px;')
+          a.btn-floating.btn-large.waves-effect.waves-light.red.btn-add
+            i.mdi-content-add
         if (user)
           include _parts/modal/info.jade
             
     script(src='/assets/jquery/dist/jquery.min.js')
     script(src='/assets/materialize/dist/js/materialize.min.js')
     script(src='/assets/jquery-infinite-scroll/jquery.infinitescroll.min.js')
+    script(src='/assets/share.js/dist/share.js')
     script(src='/js/app.js')
     block script
     

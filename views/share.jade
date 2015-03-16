@@ -22,7 +22,7 @@ html
             form(action='/share', method='post')
               .row
                 .input-field.col.s12
-                  input#url(type='url', name='url', required, readonly, value=url)
+                  input#url(type='url', name='url', required, value=url, #{readonly})
                   label(for='url') URL
               .row
                 .col.s12
@@ -34,7 +34,7 @@ html
                 input#datasource(type='hidden', name='datasource', value='web')
               .row
                 .col.s12
-                  button.waves-effect.waves-light.btn(type='submit') Push 
+                  button.waves-effect.waves-light.btn.btn-submit(type='submit', disabled) Push 
                     i.mdi-content-save 
         
     script(src='/assets/jquery/dist/jquery.min.js')
