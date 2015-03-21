@@ -18,6 +18,7 @@
         "materialize":"*",
         "jquery":"*",
         "moment":"~2.9.0",
-        "jquery-infinite-scroll":"~2.1.0"
+        "jquery-infinite-scroll":"~2.1.0",
+        "share.js":"~0.0.1"
     }
 }
