@@ -55,3 +55,17 @@
 .headroom--unpinned {
     transform: translateY(-100%);
 }
+@media only screen and (min-width: 992px) {
+	nav .hide-on-med-and-down .donate {
+		margin-right: 100px;
+	}
+}
+.side-nav li a {
+	line-height: 2.5;
+}
+.side-nav li.donate {
+    margin-top: 50px;
+}
+li.donate a {
+    font-weight: 500;	
+}
