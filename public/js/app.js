@@ -5,7 +5,7 @@
 	        scrollTop: 0
 	    }, 500);
 	});
-	$('.headroom').find('a').click(function(ev) {
+	$('.headroom').find('a').not('.modal-trigger,.button-collapse').click(function(ev) {
 	    ev.stopImmediatePropagation();
 	});
 	$('.headroom').headroom();
