@@ -1,4 +1,15 @@
 (function($) {
+
+	$('.headroom').click(function(ev) {
+	    $('html, body').animate({
+	        scrollTop: 0
+	    }, 500);
+	});
+	$('.headroom').find('a').click(function(ev) {
+	    ev.stopImmediatePropagation();
+	});
+	$('.headroom').headroom();
+	
     $('.button-collapse').sideNav();
     $('.modal-trigger').leanModal();
     $('#message').each(function() {
