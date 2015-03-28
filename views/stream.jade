@@ -2,14 +2,11 @@ extends _layout
 
 
 block header
-  title Recent | #{appdata.name}
+  title #{title} | #{appdata.name}
   meta(name='description', content='#{package.description}')
   
 
 block body
-  .section.no-pad-bot
-    h1.header.center Recent Activity
-    
   if appdata.ui.recent.style == 'list'
     include _parts/list/collection.jade
   else

@@ -19,7 +19,7 @@
     .row
       .col.s10
         .card-date.grey-text.lighten-1 
-          em: small #{moment(new Date(row._source.timestamp)).fromNow()} 
+          em: small #{moment(new Date(row._source.timestamp)).fromNow()} from #{row._source.datasource}
       .col.s2.right-align
         a.dropdown-button.share-button.grey-text.lighten-1(href='#', data-activates='share-#{row._id}')
           i.mdi-social-share
@@ -35,7 +35,8 @@
         p.flow-text.truncate #{row._source.title}
       else if row._source.description
         - var description = row._source.description.replace(/\\n/g, '')
-        p.truncate.flow-text!= description
+        - if (description.length < 200)
+          div!= description
       if row._source.datetime
         p
           em: small.grey-text Article from #{row._source.datetime}
@@ -45,7 +46,13 @@
       else if row._source.publicUrl
         p.truncate
           small: a.green-text(href=row._source.publicUrl, target='_blank', title='#{row._source.publicUrl}') #{row._source.publicUrl}
+    - if (row._source.description && row._type != 'media')
+        - var description = row._source.description.replace(/\\n/g, '')
+        .card-reveal
+          .card-title.grey-text.text-darken-4.truncate #{row._source.title}
+            i.mdi-navigation-more-vert.right
+          div != description
     .card-action
-      a(href='/view/#{row._id}') View
+      a(href=row._source.url, target='_blank') Read
       a.delete(href='#') Delete
-      img.circle.datasource-img(width='26', height='26', src='/img/logo/#{row._source.datasource}.png', title='Source: #{row._source.datasource}')
+      //-img.circle.datasource-img(width='26', height='26', src='/img/logo/#{row._source.datasource}.png', title='Source: #{row._source.datasource}')

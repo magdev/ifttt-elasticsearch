@@ -11,5 +11,3 @@ li.collection-item.avatar.item.infsc-item(data-id=row._id, data-index=row._index
       span.title #{row._source.title}
   if row._type == 'message' 
     p !{row._source.description}
-  a.secondary-content.view(href='/view/#{row._id}')
-    i.mdi-action-pageview.small

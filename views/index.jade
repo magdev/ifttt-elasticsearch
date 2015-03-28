@@ -1,7 +1,7 @@
 extends _layout
 
 block header
-  title #{appdata.name}
+  title #{title} | #{appdata.name}
   meta(name='description', content='#{package.description}')
   
 block body
