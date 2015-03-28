@@ -19,10 +19,9 @@ block body
         ul.slides
           each slide in slides
             li
-              img(src=slide._source.image, alt=slide._source.title)
-              .caption.left-align
-                h3 #{slide._source.title}
-                h5.light.grey-text.text-lighten-3 #{slide._source.description}
+              a(href=slide._source.url, target='_blank')
+                img(src=slide._source.image, alt=slide._source.title)
+                .caption.left-align
+                  h3 #{slide._source.title}
+                  h5.light.grey-text.text-lighten-3.hide-on-small-and-down #{slide._source.description}
           
-block footer
-  include _parts/footer.jade

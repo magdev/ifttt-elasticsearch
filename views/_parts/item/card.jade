@@ -3,7 +3,7 @@
     if row._source.image && imageNotBlank(row._source.image)
       .card-image
         a(href=row._source.url, target='_blank')
-          img(src=row._source.image alt='')
+          img(src=buildUrl(row._source.url, row._source.image), alt='')
           if row._type != 'message'
             span.card-title #{row._source.title}
     else if row._source.publicUrl

@@ -64,7 +64,6 @@ main {
 }
 
 .headroom,
-footer,
 #share-button,
 .github-badge {
     transition: transform 300ms linear;
@@ -75,12 +74,6 @@ footer,
 }
 .headroom--unpinned,
 .github-badge.unpinned {
-    transform: translateY(-100%);
-}
-.footer.pinned {
-    transform: translateY(0%);
-}
-.footer.unpinned {
     transform: translateY(-100%);
 }
 #share-button.pinned {
@@ -99,6 +92,12 @@ footer,
 }
 .side-nav li.donate {
     margin-top: 50px;
+}
+.slider ul.slides li .caption {
+	left: 0;
+	width: 100%;
+	padding: 0 15% 20px;
+    background: rgba(64, 64, 64, .5);
 }
 li.donate a {
     font-weight: 500;    
