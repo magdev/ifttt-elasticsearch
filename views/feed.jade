@@ -1,0 +1,13 @@
+doctype xml
+rss(version='2.0')
+  channel
+    title #{appdata.name}
+    description #{appdata.description}
+    link= baseurl
+    language en
+    each doc in documents
+      item
+        title #{doc._source.title}
+        pubDate #{doc._source.timestamp}
+        description #{doc._source.description}
+        link= doc._source.url
