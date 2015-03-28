@@ -29,6 +29,7 @@
 process.env.NODE_CONFIG_DIR = __dirname + '/../config';
 
 var program = require('commander'),
+	debug = require('debug')('ifttt-elasticsearch:cli'),
 	pckg = require('../package.json'),
 	scraper = require('../lib/scraper'),
 	strip = require('js-striphtml'),
@@ -37,7 +38,7 @@ var program = require('commander'),
 	es = new elasticsearch.Client(config.elasticsearch);
 
 function scrape(url) {
-	console.log(url);
+	debug('Scraping URL ' + url);
 	es.search({
 		index: config.index.name,
         q: url
@@ -54,7 +55,7 @@ function scrape(url) {
 						}
 					}
 	    		}, function (error, response) {
-	    			  console.log(response);
+	    			console.log(response);
 	    		})
 	    		doc._source.fullpage = article.content;
 	    		console.log(doc);
