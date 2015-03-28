@@ -35,7 +35,26 @@ var program = require('commander'),
 	strip = require('js-striphtml'),
 	config = require('config'),
 	elasticsearch = require('elasticsearch'),
-	es = new elasticsearch.Client(config.elasticsearch);
+	es = new elasticsearch.Client(config.elasticsearch),
+	
+	scrapeDocument = function(doc) {
+    	scraper(doc._source.url, function(error, article) {
+    		es.update({
+    			index: config.index.name,
+				type: doc._type,
+				id: doc._id,
+				body: {
+					doc: {
+						fullpage: strip.stripTags(article.content)
+					}
+				}
+    		}, function (error, response) {
+    			console.log(response);
+    		})
+    		doc._source.fullpage = article.content;
+    		console.log(doc);
+    	});
+	};
 
 function scrape(url) {
 	debug('Scraping URL ' + url);
@@ -43,30 +62,26 @@ function scrape(url) {
 		index: config.index.name,
         q: url
     }).then(function(body) {
-    	body.hits.hits.forEach(function(doc) {
-	    	scraper(doc._source.url, function(error, article) {
-	    		es.update({
-	    			index: config.index.name,
-					type: doc._type,
-					id: doc._id,
-					body: {
-						doc: {
-							fullpage: strip.stripTags(article.content)
-						}
-					}
-	    		}, function (error, response) {
-	    			console.log(response);
-	    		})
-	    		doc._source.fullpage = article.content;
-	    		console.log(doc);
-	    	});
-    	});
+    	body.hits.hits.forEach(scrapeDocument);
     }, function (error) {
         console.trace(error.message);
     });
 }
 
+function scrapeAll() {
+	debug('Scraping all URLs');
+	es.search({
+		index: config.index.name,
+        q: '*'
+    }).then(function(body) {
+    	body.hits.hits.forEach(scrapeDocument);
+    }, function (error) {
+        console.trace(error.message);
+    });	
+}
+
 program
   .version(pckg.version)
   .option('-i, --index [url]', 'Scrape and index an URL', scrape)
+  .option('-a, --all', 'Scrape and index all URLs', scrapeAll)  
   .parse(process.argv);
