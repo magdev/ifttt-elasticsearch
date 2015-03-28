@@ -1,7 +1,6 @@
 footer.page-footer
   .container
     .footer-copyright
-      span © 2015 #{package.author.name} 
-        em (Version #{package.version})
+      span Version #{package.version}
       if (appdata.ui.github.enable && appdata.ui.github.repository)
         a.grey-text.text-lighten-4.right(href='https://github.com/#{appdata.ui.github.repository}') Fork me on Github
