@@ -2,8 +2,11 @@
   .row
     form.col.s12(action='/search')
       .row
-        .input-field.col.m6.s12.offset-m3
-          input#search.validate(type='search', name='q', required, value=q)
-          label(for='search') Search Terms
-          button.waves-effect.waves-light.btn(type='submit') 
-            i.mdi-action-search
+        .col.m6.s12.offset-m3
+          .input-field.row.search-field
+            .col.s9.m10
+              input#search.validate(type='search', name='q', required, value=q)
+              label(for='search') Search Terms
+            .col.s3.m2
+              button.waves-effect.waves-light.btn.right(type='submit') 
+                i.mdi-action-search

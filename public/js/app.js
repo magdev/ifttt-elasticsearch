@@ -74,4 +74,7 @@
 	    belowOrigin: true
     });
     var shr = new Share();
+    $('.slider').slider({
+        full_width: true
+    });
 })(jQuery);

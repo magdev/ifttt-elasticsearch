@@ -6,8 +6,9 @@ block header
 
 block body
   .section.no-pad-bot
-    h1.header.center Yeah! Somethings broken!
+    h1.header.center Yeah! Something's broken!
     p.center.flow-text #{status} - #{message}
     
   if (error) 
-    h2 Error
+    textarea.code(rows=15, readonly)!= error
+    

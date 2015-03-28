@@ -103,3 +103,10 @@ footer,
 li.donate a {
     font-weight: 500;    
 }
+textarea.code {
+	font-family: "Courier New", Courier, monospace;
+	min-height: 200px;
+}
+.search-field button {
+	margin-top: 10px;
+}
