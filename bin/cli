@@ -48,12 +48,25 @@ var program = require('commander'),
 						fullpage: strip.stripTags(article.content)
 					}
 				}
-    		}, function (error, response) {
+    		}, function(error, response) {
     			console.log(response);
-    		})
+    		});
     		doc._source.fullpage = article.content;
     		console.log(doc);
     	});
+	},
+	
+	
+	indexDocument = function(doc) {
+		var obj = {
+				index: config.index.name,
+				type: doc._type,
+				body: doc._source
+			};
+		
+		es.index(obj, function(error, response) {
+			console.log(response);
+		});
 	};
 
 function scrape(url) {
@@ -80,8 +93,22 @@ function scrapeAll() {
     });	
 }
 
+function moveIndex(source) {
+	debug('Moved documents from ' + source + ' to ' + config.index.name);	
+	
+	es.search({
+		index: source,
+        q: '*'
+    }).then(function(body) {
+    	body.hits.hits.forEach(indexDocument);
+    }, function (error) {
+        console.trace(error.message);
+    });		
+}
+
 program
   .version(pckg.version)
   .option('-i, --index [url]', 'Scrape and index an URL', scrape)
-  .option('-a, --all', 'Scrape and index all URLs', scrapeAll)  
+  .option('-a, --all', 'Scrape and index all URLs', scrapeAll)
+  .option('-m, --move [source]', 'Move documents from an index into the current one', moveIndex)
   .parse(process.argv);
