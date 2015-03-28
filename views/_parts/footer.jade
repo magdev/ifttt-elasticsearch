@@ -1,6 +1,6 @@
-footer.page-footer
-  .container
+.container
+  footer.page-footer.light-blue.darken-1
     .footer-copyright
-      span Version #{package.version}
+      small #{package.name} #{package.version}
       if (appdata.ui.github.enable && appdata.ui.github.repository)
         a.grey-text.text-lighten-4.right(href='https://github.com/#{appdata.ui.github.repository}') Fork me on Github
