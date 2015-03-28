@@ -1,24 +1,36 @@
-.card .card-date {
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+.footer-copyright {
 	padding: 0 20px;
-	line-height: 2;
+}
+.card .card-date {
+    padding: 0 20px;
+    line-height: 2;
 }
 .card .card-title {
     font-weight: 500;
 }
 
 .card .card-content .card-title {
-	line-height: 30px;
+    line-height: 30px;
 }
 .card .card-content img {
     display: none;
 }
 .card .card-image .card-title {
-	text-shadow: 0 0 6px #888;
-	background: rgba(64, 64, 64, .6);
-	bottom: 6px;
+    text-shadow: 0 0 6px #888;
+    background: rgba(64, 64, 64, .6);
+    bottom: 6px;
+    width: 100%;
 }
 .card .card-action .datasource-img {
-	float: right;
+    float: right;
 }
 .card .card-media {
     position: relative;
@@ -42,43 +54,52 @@
     width: 100%;
 }
 .pagination {
-	display: none;
+    display: none;
 }
 .share-button {
-	font-size: 20px;
+    font-size: 20px;
+}
+.share-content {
+    font-size: 13px;
+}
+
+.headroom,
+footer,
+#share-button,
+.github-badge {
+    transition: transform 300ms linear;
+}
+.headroom--pinned,
+.github-badge.pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned,
+.github-badge.unpinned {
+    transform: translateY(-100%);
+}
+.footer.pinned {
+    transform: translateY(0%);
+}
+.footer.unpinned {
+    transform: translateY(-100%);
 }
 #share-button.pinned {
     transform: translate(0,initial);
-    transition: all .5s ease-out;
 }
 #share-button.unpinned {
     transform: translate(0,130px);
-    transition: all .5s ease-in;
-}
-.share-content {
-	font-size: 13px;
-}
-
-.headroom {
-    transition: transform 300ms linear;
-}
-.headroom--pinned {
-    transform: translateY(0%);
-}
-.headroom--unpinned {
-    transform: translateY(-100%);
 }
 @media only screen and (min-width: 992px) {
-	nav .hide-on-med-and-down .donate {
-		margin-right: 100px;
-	}
+    nav .hide-on-med-and-down .donate {
+        margin-right: 100px;
+    }
 }
 .side-nav li a {
-	line-height: 2.5;
+    line-height: 2.5;
 }
 .side-nav li.donate {
     margin-top: 50px;
 }
 li.donate a {
-    font-weight: 500;	
+    font-weight: 500;    
 }

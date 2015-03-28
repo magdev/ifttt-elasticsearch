@@ -10,12 +10,12 @@
 	});
 	$('.headroom').headroom({
 	    onPin : function() {
-	       $('#share-button')
+	       $('#share-button,.github-badge,footer')
 	           .removeClass('unpinned')
 	           .addClass('pinned');
 	    },
         onUnpin : function() {
-           $('#share-button')
+           $('#share-button,.github-badge,footer')
                .removeClass('pinned')
                .addClass('unpinned');
         },
