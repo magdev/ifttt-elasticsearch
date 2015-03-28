@@ -10,6 +10,8 @@ block body
       h1.header.center Welcome to #{appdata.name}
       p.center.flow-text This is the personal Websearch of 
         a(href='mailto:#{owner.email}', target='blank') #{owner.name}
+      .center
+        a.btn.waves-effect(href='/login') Login
       
   if (user)
     include _parts/search
@@ -24,4 +26,3 @@ block body
                 .caption.left-align
                   h3 #{slide._source.title}
                   h5.light.grey-text.text-lighten-3.hide-on-small-and-down #{slide._source.description}
-          
