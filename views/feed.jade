@@ -5,9 +5,19 @@ rss(version='2.0')
     description #{appdata.description}
     link= baseurl
     language en
+    generator IFTTT-Elasticsearch #{package.version}
+    image
+      url #{baseurl}/img/icon/icon-196.png
+      link= baseurl
     each doc in documents
       item
         title #{doc._source.title}
         pubDate #{doc._source.timestamp}
         description #{doc._source.description}
         link= doc._source.url
+        guid #{baseurl}/id/#{doc._id}
+        category #{doc._source.datasource}
+        if doc._source.image
+          image
+            url= doc._source.image
+            link= doc._source.url

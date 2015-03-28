@@ -24,7 +24,7 @@ main {
     display: none;
 }
 .card .card-image .card-title {
-    text-shadow: 0 0 6px #888;
+    text-shadow: 1px 2px 0 #333;
     background: rgba(64, 64, 64, .6);
     bottom: 6px;
     width: 100%;
@@ -89,6 +89,8 @@ main {
 }
 .side-nav li a {
     line-height: 2.5;
+    font-size: 120%;
+    display: block;
 }
 .side-nav li.donate {
     margin-top: 50px;
@@ -98,6 +100,9 @@ main {
 	width: 100%;
 	padding: 0 15% 20px;
     background: rgba(64, 64, 64, .5);
+}
+.slider ul.slides li .caption h3 {
+    text-shadow: 1px 2px 0 #333;
 }
 li.donate a {
     font-weight: 500;    
