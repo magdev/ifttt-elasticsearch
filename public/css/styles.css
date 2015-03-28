@@ -6,11 +6,16 @@
     font-weight: 500;
 }
 
+.card .card-content .card-title {
+	line-height: 30px;
+}
 .card .card-content img {
     display: none;
 }
 .card .card-image .card-title {
 	text-shadow: 0 0 6px #888;
+	background: rgba(64, 64, 64, .6);
+	bottom: 6px;
 }
 .card .card-action .datasource-img {
 	float: right;
@@ -41,6 +46,14 @@
 }
 .share-button {
 	font-size: 20px;
+}
+#share-button.pinned {
+    transform: translate(0,initial);
+    transition: all .5s ease-out;
+}
+#share-button.unpinned {
+    transform: translate(0,130px);
+    transition: all .5s ease-in;
 }
 .share-content {
 	font-size: 13px;

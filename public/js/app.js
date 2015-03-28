@@ -8,7 +8,18 @@
 	$('.headroom').find('a').not('.modal-trigger,.button-collapse').click(function(ev) {
 	    ev.stopImmediatePropagation();
 	});
-	$('.headroom').headroom();
+	$('.headroom').headroom({
+	    onPin : function() {
+	       $('#share-button')
+	           .removeClass('unpinned')
+	           .addClass('pinned');
+	    },
+        onUnpin : function() {
+           $('#share-button')
+               .removeClass('pinned')
+               .addClass('unpinned');
+        },
+	});
 	
     $('.button-collapse').sideNav();
     $('.modal-trigger').leanModal();

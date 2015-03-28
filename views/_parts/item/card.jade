@@ -22,7 +22,7 @@
           em: small #{moment(new Date(row._source.timestamp)).fromNow()} 
       .col.s2.right-align
         a.dropdown-button.share-button.grey-text.lighten-1(href='#', data-activates='share-#{row._id}')
-          i.mdi-navigation-more-vert
+          i.mdi-social-share
         ul.dropdown-content.share-content(id='share-#{row._id}')
           li: a.grey-text.lighten-1(href='#', data-share-google-plus, data-share-url=row._source.url) Google+
           li: a.grey-text.lighten-1(href='#', data-share-twitter, data-share-text=row._source.title, data-share-url=row._source.url) Twitter
