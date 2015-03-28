@@ -22,7 +22,8 @@
     "main":"./bin/www",
     "scripts":{
         "start":"node ./bin/www",
-        "postinstall":"bower install"
+        "postinstall":"bower install",
+        "debug-start":"node --debug=9222 ./bin/www"
     },
     "dependencies":{
         "body-parser":"~1.10.2",
