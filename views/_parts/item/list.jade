@@ -2,11 +2,10 @@ li.collection-item.item.infsc-item(data-id=row._id, data-index=row._index, data-
   if row._source.url
     a(href=row._source.url, target='_blank')
       if row._type == 'message'
-        span.title #{row._source.datetime}
+        span.title.truncate #{row._source.description}
       else
-        span.title #{row._source.title}
+        span.title.truncate #{row._source.title}
   if row._source.publicUrl
     a(href=row._source.publicUrl, target='_blank')
-      span.title #{row._source.title}
-  if row._type == 'message' 
-    p !{row._source.description}
+      span.title.truncate #{row._source.title}
+  em.right.grey-text.lighten-1: small #{moment(new Date(row._source.timestamp)).fromNow()} from #{row._source.datasource}
