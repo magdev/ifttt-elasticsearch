@@ -14,10 +14,11 @@
         h4 Search-Plugin
         p To use the search directly in the browser add the Search-Plugin.
         p: a.btn.add-search(href='#{baseurl}/opensearch.xml') Add Search-Plugin
-      .col.s12.m6
-        h4 Elasticsearch
-        p Open the Elasticsearch Head-Plugin in a new tab.
-        p: a.waves-effect.btn(href='#{config.elasticsearch.host}/_plugin/head', target='_blank') Open in Browser
+      if isAdmin()
+        .col.s12.m6
+          h4 Elasticsearch
+          p Open the Elasticsearch Head-Plugin in a new tab.
+          p: a.waves-effect.btn(href='#{config.elasticsearch.host}/_plugin/head', target='_blank') Open in Browser
         
   .modal-footer
     a.waves-effect.btn.modal-action.modal-close(href='#') Close
