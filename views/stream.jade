@@ -7,7 +7,7 @@ block header
   
 
 block body
-  if appdata.ui.recent.style == 'list'
+  if appdata.ui.recent.style == 'list' || mode == 'list'
     include _parts/list/collection.jade
   else
     include _parts/list/cards.jade

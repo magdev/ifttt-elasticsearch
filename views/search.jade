@@ -10,7 +10,7 @@ block body
   if result
     p Total results: #{result.total}
     if result.total > 0
-      if appdata.ui.search.style == 'list'
+      if appdata.ui.search.style == 'list' || mode == 'list'
         include _parts/list/collection.jade
       else
         include _parts/list/cards.jade
