@@ -5,7 +5,7 @@ index:
   name: ifttt
   type: common
 users:
-  - { username: testuser, password: changeme, email: "testuser@example.com" }
+  - { username: testuser, password: changeme, email: "testuser@example.com", role: admin }
 owner:
   name: "Your Name"
   email: "your-email@example.org"
@@ -14,9 +14,9 @@ app:
   description: "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you."
   ui:
     recent:
-      style: card
+      style: cards
     search:
-      style: card
+      style: cards
     github:
       enable: true
       repository: "magdev/ifttt-elasticsearch"
