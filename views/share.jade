@@ -32,6 +32,7 @@ html
                 input#image(type='hidden', name='image')
                 input#type(type='hidden', name='type', value='common')
                 input#datasource(type='hidden', name='datasource', value='web')
+                input(type='hidden', name='_csrf', value='#{csrfToken}')
               .row
                 .col.s12
                   button.waves-effect.waves-light.btn.btn-submit(type='submit', disabled) Push 
