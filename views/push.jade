@@ -1,0 +1,27 @@
+doctype html
+html
+  head(profile='http://a9.com/-/spec/opensearch/1.1/')
+    include _parts/header.jade
+    link(rel='stylesheet', href='https://#{appdata.ui.github.cdn}/markserbol/urlive/master/jquery.urlive.css')
+    link(rel='search', type='application/opensearchdescription+xml', href='#{baseurl}/opensearch.xml', title='#{appdata.name}')
+    title #{title} | #{appdata.name}
+    
+  body
+    header
+      nav(class=appdata.ui.theme.baseColor, role='navigation')
+        .nav-wrapper.container
+          span#logo-container.brand-logo.truncate Push to #{appdata.name}
+          
+    main
+      .container
+        if success
+          script.
+            window.close();
+        else
+          .row
+            include _parts/form/add.jade
+        
+    script(src='/assets/jquery/dist/jquery.min.js')
+    script(src='/assets/materialize/dist/js/materialize.min.js')
+    script(src='https://#{appdata.ui.github.cdn}/markserbol/urlive/master/jquery.urlive.min.js')
+    script(src='/js/push.js')

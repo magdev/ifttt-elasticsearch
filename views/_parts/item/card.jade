@@ -1,5 +1,5 @@
 .col.s12.m6.infsc-item
-  .card.item(data-id=row._id, data-index=row._index, data-type=row._type)
+  .card.item(data-id=row._id, data-index=row._index, data-type=row._type, id=row._id)
     if row._source.image && imageNotBlank(row._source.image)
       .card-image
         a(href=row._source.url, target='_blank')
@@ -53,6 +53,7 @@
             i.mdi-navigation-more-vert.right
           div != description
     .card-action
+      a(href='/view/#{row._index}/#{row._type}/#{row._id}') View
       a(href=row._source.url, target='_blank') Read
       a.delete(href='#') Delete
       //-img.circle.datasource-img(width='26', height='26', src='/img/logo/#{row._source.datasource}.png', title='Source: #{row._source.datasource}')

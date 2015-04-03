@@ -4,10 +4,11 @@ html
     include _parts/header.jade
     link(rel='search', type='application/opensearchdescription+xml', href='#{baseurl}/opensearch.xml', title='#{appdata.name}')
     block header
+    block opensearch
     
   body.grey.lighten-4
     header.navbar-fixed
-      nav.light-blue.lighten-1.headroom(role='navigation')
+      nav.headroom(role='navigation', class=appdata.ui.theme.baseColor)
         .nav-wrapper.container
           a#logo-container.brand-logo.truncate(href='/') #{title}
             if (user)
@@ -26,7 +27,7 @@ html
         
         if (user)
           .fixed-action-btn#share-button(style='bottom: 45px; right: 24px;')
-            a.btn-floating.btn-large.waves-effect.waves-light.light-blue.lighten-1.btn-add
+            a.btn-floating.btn-large.waves-effect.waves-light.btn-add(class=appdata.ui.theme.buttonColor)
               i.mdi-content-add
         if (user)
           include _parts/modal/info.jade

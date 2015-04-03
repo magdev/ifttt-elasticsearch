@@ -21,9 +21,9 @@ block body
           input#password.validate(type='password', name='password', required)
           label(for='password') Password
       .row
-        .col.m6.s12.offset-m3
+        .col.m6.s12.offset-m3.center-align
           input(type='hidden', name='_csrf', value='#{csrfToken}')
-          button.waves-effect.waves-light.btn(type='submit') 
+          button.waves-effect.waves-light.btn(type='submit', class=appdata.ui.theme.buttonColor) 
             i.mdi-action-lock-open 
           
 block footer

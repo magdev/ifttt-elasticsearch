@@ -6,19 +6,19 @@
     else 
       p #{pckg.description}
     .row
-      .col.s12.m6.hide-on-med-and-down
-        h4 Bookmarklet
+      .col.s12.m4.hide-on-med-and-down
+        p: strong Bookmarklet
         p Drag this button over your bookmarks to push content from everywhere into the search-server.
-        p: a.btn.btn-bookmarklet(href=bookmarklet()) Push to #{appdata.name}
-      .col.s12.m6
-        h4 Search-Plugin
+        p: a.btn.btn-bookmarklet(href=bookmarklet(), class=appdata.ui.theme.buttonColor) Push to #{appdata.name}
+      .col.s12.m4
+        p: strong Search-Plugin
         p To use the search directly in the browser add the Search-Plugin.
-        p: a.btn.add-search(href='#{baseurl}/opensearch.xml') Add Search-Plugin
+        p: a.btn.add-search(href='#{baseurl}/opensearch.xml', class=appdata.ui.theme.buttonColor) Add Search-Plugin
       if isAdmin()
-        .col.s12.m6
-          h4 Elasticsearch
+        .col.s12.m4
+          p: strong Elasticsearch Head
           p Open the Elasticsearch Head-Plugin in a new tab.
-          p: a.waves-effect.btn(href='#{config.elasticsearch.host}/_plugin/head', target='_blank') Open in Browser
+          p: a.waves-effect.btn(href='#{config.elasticsearch.host}/_plugin/head', target='_blank', class=appdata.ui.theme.buttonColor) Open in Browser
         
   .modal-footer
-    a.waves-effect.btn.modal-action.modal-close(href='#') Close
+    a.waves-effect.btn.modal-action.modal-close(href='#', class=appdata.ui.theme.buttonColor) Close

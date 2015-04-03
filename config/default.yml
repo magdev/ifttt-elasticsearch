@@ -35,6 +35,10 @@ app:
   name: "IFTTT-Elasticsearch"
   description: "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you."
   ui:
+    theme:
+      baseColor: "light-blue lighten-1"
+      buttonColor: "light-blue darken-1"
+      textColor: "light-blue-text darken-2"
     recent:
       style: cards
     search:

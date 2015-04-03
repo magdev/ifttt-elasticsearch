@@ -62,7 +62,7 @@
     });
     $('.btn-add').click(function(ev) {
         ev.preventDefault();
-        window.open('/share', 'indexall', 'locationbar=yes,width=480px,height=500px,statusbar=no,menubar=no,scrollbars=yes,toolbar=no,resizable=yes')
+        window.open('/push', 'indexall', 'locationbar=yes,width=480px,height=500px,statusbar=no,menubar=no,scrollbars=yes,toolbar=no,resizable=yes')
     });
     $('.share-button').dropdown({
         inDuration: 300,
@@ -77,4 +77,5 @@
     $('.slider').slider({
         full_width: true
     });
+    $('.collapsible').collapsible();
 })(jQuery);

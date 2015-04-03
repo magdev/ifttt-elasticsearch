@@ -1,0 +1,17 @@
+form(action='/push', method='post')
+  .row
+    .input-field.col.s12
+      input#url(type='url', name='url', required, value=url, #{readonly})
+      label(for='url') Enter an URL
+  .row
+    .col.s12
+      .preview
+    input#title(type='hidden', name='title')
+    input#description(type='hidden', name='description')
+    input#image(type='hidden', name='image')
+    input#type(type='hidden', name='type', value='common')
+    input#datasource(type='hidden', name='datasource', value='web')
+    input(type='hidden', name='_csrf', value='#{csrfToken}')
+  .row
+    .col.s12.center-align
+      button.waves-effect.waves-light.btn.btn-submit.btn-large(type='submit', disabled, class=appdata.ui.theme.buttonColor) Push 

@@ -5,8 +5,8 @@
         .col.m6.s12.offset-m3
           .input-field.row.search-field
             .col.s9.m10
-              input#search.validate(type='search', name='q', required, value=q)
+              input#search.validate(type='search', name='q', required, value=q, role='search')
               label(for='search') Search Terms
             .col.s3.m2
-              button.waves-effect.waves-light.btn.right(type='submit') 
+              button.waves-effect.waves-light.btn.right(type='submit', class=appdata.ui.theme.buttonColor) 
                 i.mdi-action-search

@@ -7,6 +7,7 @@ block header
   
 
 block body
+  include _parts/search
   if appdata.ui.recent.style == 'list' || mode == 'list'
     include _parts/list/collection.jade
   else

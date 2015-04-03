@@ -1,0 +1,91 @@
+extends _layout
+
+block header
+  title #{title} | #{appdata.name}
+  meta(name='description', content='#{pckg.description}')
+  link(rel='canonical', href=currentUrl)
+  
+block body
+  .row
+    .col.s12.m8
+      .card.item(data-id=result._id, data-index=result._index, data-type=result._type, id=result._id)
+        if result._source.image && imageNotBlank(result._source.image)
+          .card-image
+            img(src=buildUrl(result._source.url, result._source.image), alt='')
+            if result._type != 'message'
+              span.card-title #{result._source.title}
+        else if result._source.publicUrl
+          .card-image
+            img(src=result._source.publicUrl alt='')
+            if result._type != 'message'
+              span.card-title #{result._source.title}
+        if result._type == 'media'
+          if result._source.embed
+            - var embed = result._source.embed.replace(/[\\]*/g, '')
+            .card-media!= embed
+        .row
+          .col.s10
+            .card-date.grey-text.lighten-1 
+              em: small #{moment(new Date(result._source.timestamp)).fromNow()} from #{result._source.datasource}
+          .col.s2.right-align
+            a.dropdown-button.share-button.grey-text.lighten-1(href='#', data-activates='share-#{result._id}')
+              i.mdi-social-share
+            ul.dropdown-content.share-content(id='share-#{result._id}')
+              li: a.grey-text.lighten-1(href='#', data-share-google-plus, data-share-url=result._source.url) Google+
+              li: a.grey-text.lighten-1(href='#', data-share-twitter, data-share-text=result._source.title, data-share-url=result._source.url) Twitter
+        .card-content.darkgrey-text
+          - if ((!result._source.image || !imageNotBlank(result._source.image)) && !result._source.publicUrl)
+            if result._type != 'message' && result._type != 'media'
+              a(href=result._source.url, target='_blank')
+                span.card-title.grey-text.text-darken-4 #{result._source.title}
+          if result._type == 'media'
+            p.flow-text.truncate #{result._source.title}
+          else if result._source.description
+            - var description = result._source.description.replace(/\\n/g, '')
+            - if (description.length < 200)
+              div!= description
+          if result._source.datetime
+            p
+              em: small.grey-text Article from #{result._source.datetime}
+          if result._source.url
+            p.truncate
+              small: a.green-text(href=result._source.url, target='_blank', title='#{result._source.url}') #{result._source.url}
+          else if result._source.publicUrl
+            p.truncate
+              small: a.green-text(href=result._source.publicUrl, target='_blank', title='#{result._source.publicUrl}') #{result._source.publicUrl}
+        - if (result._source.description && result._type != 'media')
+            - var description = result._source.description.replace(/\\n/g, '')
+            .card-reveal
+              .card-title.grey-text.text-darken-4.truncate #{result._source.title}
+                i.mdi-navigation-more-vert.right
+              div!= description
+        .card-action
+          a(href=result._source.url, target='_blank') Read
+          a.delete(href='#') Delete
+          //-img.circle.datasource-img(width='26', height='26', src='/img/logo/#{result._source.datasource}.png', title='Source: #{result._source.datasource}')
+          
+    aside.col.s12.m4
+      .card
+        .card-content
+          span.card-title.grey-text Metadata
+          table.bordered
+            tr
+              th ID
+              td #{result._id}
+            tr
+              th Version
+              td #{result._version}
+            tr
+              th Type
+              td
+                a(href='/types#type-' + result._type, target='_blank') #{result._type}
+            tr
+              th Index
+              td #{result._index}
+            tr
+              th Timestamp
+              td.truncate(title='#{result._source.timestamp}') #{moment(new Date(result._source.timestamp)).format('llll')}
+            tr
+              th Datasource
+              td #{result._source.datasource}
+          

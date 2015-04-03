@@ -1,0 +1,26 @@
+extends _layout
+
+block header
+  title #{title} | #{appdata.name}
+  meta(name='description', content='#{pckg.description}')
+  
+block body
+  .row
+    .col.s12
+      ul.collapsible( data-collapsible='accordion')
+        each type, name in types
+          li
+            .collapsible-header(id='type-#{name}') #{name}
+            .collapsible-body 
+              table.bordered
+                tbody
+                  each val,key in type.properties
+                    - var value = JSON.stringify(val);
+                    tr
+                      th #{key}
+                      td #{value}
+                 
+       
+block script
+  script.
+    var hash=window.location.hash||'';if(hash){$(hash).addClass('active');}
