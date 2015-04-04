@@ -1,14 +1,15 @@
 extends _layout
 
 block header
-  title #{title} | #{appdata.name}
-  meta(name='description', content='#{pckg.description}')
+  title #{__(title)} | #{appdata.name}
+  meta(name='description', content='#{__(appdata.description)}')
   
 block opensearch
-  meta(name='totalResults', content=result.total)
-  meta(name='startIndex', content=startIndex)
-  meta(name='itemsPerPage', content=itemsPerPage)
-  | !{header}
+  if result
+    meta(name='totalResults', content=result.total)
+    meta(name='startIndex', content=startIndex)
+    meta(name='itemsPerPage', content=itemsPerPage)
+    | !{header}
   
 block body
   include _parts/search
@@ -24,7 +25,7 @@ block body
             
         .row !{pager}
   else
-    h2 Search all the things!
+    h2 #{__('Search all the things!')}
             
             
               

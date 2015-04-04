@@ -4,13 +4,13 @@ html
     include _parts/header.jade
     link(rel='stylesheet', href='https://#{appdata.ui.github.cdn}/markserbol/urlive/master/jquery.urlive.css')
     link(rel='search', type='application/opensearchdescription+xml', href='#{baseurl}/opensearch.xml', title='#{appdata.name}')
-    title #{title} | #{appdata.name}
+    title #{__(title)} | #{appdata.name}
     
   body
     header
       nav(class=appdata.ui.theme.baseColor, role='navigation')
         .nav-wrapper.container
-          span#logo-container.brand-logo.truncate Push to #{appdata.name}
+          span#logo-container.brand-logo.truncate #{__('Push to %s', appdata.name)}
           
     main
       .container

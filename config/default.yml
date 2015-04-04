@@ -69,3 +69,11 @@ users:
 # Cache Settings
 cache:
   maxAge: 2592000000
+  
+# I18N
+i18n:
+  locales:
+    - en
+    - de
+  defaultLocale: en
+  

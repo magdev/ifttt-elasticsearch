@@ -4,7 +4,7 @@ form(action='/search')
       .input-field.row.search-field
         .col.s9.m10
           input#search.validate(type='search', name='q', required, value=q)
-          label(for='search') Search Terms
+          label(for='search') #{__('Search Terms')}
         .col.s3.m2
           button.waves-effect.waves-light.btn.right(type='submit', class=appdata.ui.theme.buttonColor) 
             i.mdi-action-search

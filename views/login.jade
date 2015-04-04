@@ -1,13 +1,13 @@
 extends _layout
 
 block header
-  title #{title} | #{appdata.name}
+  title #{__(title)} | #{appdata.name}
   meta(name='description', content='#{pckg.description}')
   
 block body
   .section.no-pad-bot
-    h1.header.center Welcome to #{appdata.name}
-    p.center.flow-text This is the personal Websearch of 
+    h1.header.center #{__('Welcome to %s', appdata.name)}
+    p.center.flow-text #{__('This is the personal Websearch of ')}
       a(href='mailto:#{owner.email}', target='blank') #{owner.name}
       
   .row
@@ -15,11 +15,11 @@ block body
       .row
         .input-field.col.m6.s12.offset-m3
           input#username.validate(type='text', name='username', required)
-          label(for='username') Username
+          label(for='username') #{__('Username')}
       .row
         .input-field.col.m6.s12.offset-m3
           input#password.validate(type='password', name='password', required)
-          label(for='password') Password
+          label(for='password') #{__('Password')}
       .row
         .col.m6.s12.offset-m3.center-align
           input(type='hidden', name='_csrf', value='#{csrfToken}')

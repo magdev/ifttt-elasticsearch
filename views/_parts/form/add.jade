@@ -2,7 +2,7 @@ form(action='/push', method='post')
   .row
     .input-field.col.s12
       input#url(type='url', name='url', required, value=url, #{readonly})
-      label(for='url') Enter an URL
+      label(for='url') #{__('Enter an URL')}
   .row
     .col.s12
       .preview
@@ -14,4 +14,4 @@ form(action='/push', method='post')
     input(type='hidden', name='_csrf', value='#{csrfToken}')
   .row
     .col.s12.center-align
-      button.waves-effect.waves-light.btn.btn-submit.btn-large(type='submit', disabled, class=appdata.ui.theme.buttonColor) Push 
+      button.waves-effect.waves-light.btn.btn-submit.btn-large(type='submit', disabled, class=appdata.ui.theme.buttonColor) #{__('Push')} 

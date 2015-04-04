@@ -1,7 +1,7 @@
 extends _layout
 
 block header
-  title #{title} | #{appdata.name}
+  title #{__(title)} | #{appdata.name}
   meta(name='description', content='#{pckg.description}')
   link(rel='canonical', href=currentUrl)
   
@@ -26,7 +26,7 @@ block body
         .row
           .col.s10
             .card-date.grey-text.lighten-1 
-              em: small #{moment(new Date(result._source.timestamp)).fromNow()} from #{result._source.datasource}
+              em: small #{__('%s from %s', moment(new Date(result._source.timestamp)).fromNow(), result._source.datasource)}
           .col.s2.right-align
             a.dropdown-button.share-button.grey-text.lighten-1(href='#', data-activates='share-#{result._id}')
               i.mdi-social-share
@@ -46,7 +46,7 @@ block body
               div!= description
           if result._source.datetime
             p
-              em: small.grey-text Article from #{result._source.datetime}
+              em: small.grey-text #{__('Article from %s', result._source.datetime)}
           if result._source.url
             p.truncate
               small: a.green-text(href=result._source.url, target='_blank', title='#{result._source.url}') #{result._source.url}
@@ -60,32 +60,32 @@ block body
                 i.mdi-navigation-more-vert.right
               div!= description
         .card-action
-          a(href=result._source.url, target='_blank') Read
-          a.delete(href='#') Delete
+          a(href=result._source.url, target='_blank') #{__('Read')}
+          a.delete(href='#') #{__('Delete')}
           //-img.circle.datasource-img(width='26', height='26', src='/img/logo/#{result._source.datasource}.png', title='Source: #{result._source.datasource}')
           
     aside.col.s12.m4
       .card
         .card-content
-          span.card-title.grey-text Metadata
+          span.card-title.grey-text #{__('Metadata')}
           table.bordered
             tr
-              th ID
+              th #{__('ID')}
               td #{result._id}
             tr
-              th Version
+              th #{__('Version')}
               td #{result._version}
             tr
-              th Type
+              th #{__('Type')}
               td
                 a(href='/types#type-' + result._type, target='_blank') #{result._type}
             tr
-              th Index
+              th #{__('Index')}
               td #{result._index}
             tr
-              th Timestamp
+              th #{__('Timestamp')}
               td.truncate(title='#{result._source.timestamp}') #{moment(new Date(result._source.timestamp)).format('llll')}
             tr
-              th Datasource
+              th #{__('Datasource')}
               td #{result._source.datasource}
           

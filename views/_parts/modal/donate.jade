@@ -1,7 +1,7 @@
 #donate.modal.modal-fixed-footer
   .modal-content
-    h3 Donate to IFTTT-Elasticsearch
-    p.flow-text If you like this software feel free to donate something
+    h3 #{__('Donate to IFTTT-Elasticsearch')}
+    p.flow-text #{__('If you like this software feel free to donate something')}
     .row 
       .col.s6.m4.center-align
         img(src='/img/icon/icon-128.png', alt='Paypal')
@@ -13,12 +13,12 @@
           input(type='hidden', name='no_note', value='0')
           input(type='hidden', name='currency_code', value='EUR')
           input(type='hidden', name='bn', value='PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest')
-          button.waves-effect.btn(type='submit', name='submit', class=appdata.ui.theme.buttonColor) Paypal
+          button.waves-effect.btn(type='submit', name='submit', class=appdata.ui.theme.buttonColor) #{__('Paypal')}
       .col.s6.m4.center-align
         img(src='/img/icon/icon-128.png', alt='Bitcoin')
-        a.btn.waves-effect(href='bitcoin:1Bmw9e3VBuCZzmtk4r9QiEUuVDPmSBp7tW?amount=0.1&message=Donation%20to%20IFTTT-Elasticsearch', class=appdata.ui.theme.buttonColor) Bitcoin
+        a.btn.waves-effect(href='bitcoin:1Bmw9e3VBuCZzmtk4r9QiEUuVDPmSBp7tW?amount=0.1&message=Donation%20to%20IFTTT-Elasticsearch', class=appdata.ui.theme.buttonColor) #{__('Bitcoin')}
       .col.s6.m4.center-align
         img(src='/img/icon/icon-128.png', alt='Amazon')
-        a.btn.waves-effect(href='http://www.amazon.de/gp/registry/wishlist/9OHSEUUDSJGD', target='_blank', class=appdata.ui.theme.buttonColor) Amazon Wishlist
+        a.btn.waves-effect(href='http://www.amazon.de/gp/registry/wishlist/9OHSEUUDSJGD', target='_blank', class=appdata.ui.theme.buttonColor) #{__('Amazon Wishlist')}
   .modal-footer
-    a.waves-effect.btn.modal-action.modal-close(href='#', class=appdata.ui.theme.buttonColor) Close
+    a.waves-effect.btn.modal-action.modal-close(href='#', class=appdata.ui.theme.buttonColor) #{__('Close')}

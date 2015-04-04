@@ -19,7 +19,7 @@
     .row
       .col.s10
         .card-date.grey-text.lighten-1 
-          em: small #{moment(new Date(row._source.timestamp)).fromNow()} from #{row._source.datasource}
+          em: small #{__('%s from %s', moment(new Date(row._source.timestamp)).fromNow(), row._source.datasource)}
       .col.s2.right-align
         a.dropdown-button.share-button.grey-text.lighten-1(href='#', data-activates='share-#{row._id}')
           i.mdi-social-share
@@ -39,7 +39,7 @@
           div!= description
       if row._source.datetime
         p
-          em: small.grey-text Article from #{row._source.datetime}
+          em: small.grey-text #{__('Article from %s',row._source.datetime)}
       if row._source.url
         p.truncate
           small: a.green-text(href=row._source.url, target='_blank', title='#{row._source.url}') #{row._source.url}
@@ -53,7 +53,7 @@
             i.mdi-navigation-more-vert.right
           div != description
     .card-action
-      a(href='/view/#{row._index}/#{row._type}/#{row._id}') View
-      a(href=row._source.url, target='_blank') Read
-      a.delete(href='#') Delete
+      a(href='/view/#{row._index}/#{row._type}/#{row._id}') #{__('View')}
+      a(href=row._source.url, target='_blank') #{__('Read')}
+      a.delete(href='#') #{__('Delete')}
       //-img.circle.datasource-img(width='26', height='26', src='/img/logo/#{row._source.datasource}.png', title='Source: #{row._source.datasource}')

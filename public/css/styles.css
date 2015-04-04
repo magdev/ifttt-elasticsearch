@@ -120,3 +120,15 @@ textarea.code {
 .search-field button {
 	margin-top: 10px;
 }
+.box {
+    display: flex;
+    min-height: 250px;
+    flex-direction: column;
+}
+.box .box-title {
+	font-weight: 700;
+}
+.box .box-body {
+    flex: 1 0 auto;
+}
+.box .box-footer {}

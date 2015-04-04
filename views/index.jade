@@ -1,17 +1,17 @@
 extends _layout
 
 block header
-  title #{title} | #{appdata.name}
-  meta(name='description', content='#{pckg.description}')
+  title #{__(title)} | #{appdata.name}
+  meta(name='description', content='#{__(appdata.description)}')
   
 block body
   if (!user)
     .section.no-pad-bot
-      h1.header.center Welcome to #{appdata.name}
-      p.center.flow-text This is the personal Websearch of 
+      h1.header.center #{__('Welcome to %s', appdata.name)}
+      p.center.flow-text #{__('This is the personal Websearch of')} 
         a(href='mailto:#{owner.email}', target='blank') #{owner.name}
       .center
-        a.btn.waves-effect(href='/login') Login
+        a.btn.waves-effect(href='/login') #{__('Login')} 
       
   if (user)
     include _parts/search
