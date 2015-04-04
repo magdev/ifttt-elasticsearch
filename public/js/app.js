@@ -67,7 +67,7 @@
     $('.share-button').dropdown({
         inDuration: 300,
         outDuration: 225,
-        constrain_width: false,
+        constrainWidth: false,
 	    hover: false,
 	    alignment: 'right',
 	    gutter: 0,
