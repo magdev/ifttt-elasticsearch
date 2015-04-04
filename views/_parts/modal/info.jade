@@ -1,6 +1,7 @@
 #info.modal.modal-fixed-footer
   .modal-content
-    h3 #{appdata.name} #{__('Info')}
+    h4 #{appdata.name} #{__('Info')}
+    p.grey-text.lighten-1: em (#{__('Version %s', pckg.version)})
     if appdata.description
       p #{__(appdata.description)}
     else 

@@ -122,8 +122,13 @@ textarea.code {
 }
 .box {
     display: flex;
-    min-height: 250px;
     flex-direction: column;
+}
+#info .box {
+    min-height: 250px;
+}
+#donate .box {
+    min-height: 200px;
 }
 .box .box-title {
 	font-weight: 700;

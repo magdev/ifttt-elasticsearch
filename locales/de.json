@@ -34,5 +34,7 @@
     "Metadata":"Metadaten",
     "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you.":"Verbinde deinen eigenen Elasticsearch Suchserver mit IFTTT und fange die Inhalte auf, die dich interessieren.",
     "Yeah! Something's broken!":"Yeah! Irgendwas ist kaputt!",
-    "Search all the things!":"Search all the things!"
+    "Search all the things!":"Search all the things!",
+    "Magstore":"Magstore",
+    "Version %s":"Version %s"
 }
