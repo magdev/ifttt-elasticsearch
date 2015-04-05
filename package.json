@@ -55,5 +55,8 @@
     },
     "devDependencies":{
         "bower":"*"
+    },
+    "bin":{
+        "ifttt-es":"./bin/cli"
     }
 }
