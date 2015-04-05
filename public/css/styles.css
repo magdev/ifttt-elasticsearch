@@ -137,3 +137,10 @@ textarea.code {
     flex: 1 0 auto;
 }
 .box .box-footer {}
+
+table.condensed {}
+
+table.condensed td,
+table.condensed th {
+	padding: 5px;
+}

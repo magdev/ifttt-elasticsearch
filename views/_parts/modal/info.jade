@@ -1,11 +1,23 @@
 #info.modal.modal-fixed-footer
   .modal-content
     h4 #{appdata.name} #{__('Info')}
-    p.grey-text.lighten-1: em (#{__('Version %s', pckg.version)})
-    if appdata.description
-      p #{__(appdata.description)}
-    else 
-      p #{__(pckg.description)}
+    .row
+      .col.s12.m7
+        if appdata.description
+          p #{__(appdata.description)}
+        else 
+          p #{__(pckg.description)}
+      .col.s12.m5
+        table.grey-text.lighten-1.condensed
+          tr
+            th #{__('Version')}
+            td #{pckg.version}
+          tr
+            th #{__('Website')}
+            td
+              a(href=pckg.homepage, target='_blank') #{__('Home')}
+              |  | 
+              a(href=pckg.bugs, target='_blank') #{__('Issues')}
     .row
       .col.s12.m4.hide-on-med-and-down.box
         p.box-title #{__('Bookmarklet')}
@@ -22,4 +34,4 @@
           p.box-footer.center-align: a.waves-effect.btn(href='#{config.elasticsearch.host}/_plugin/head', target='_blank', class=appdata.ui.theme.buttonColor) #{__('Open in Browser')}
         
   .modal-footer
-    a.waves-effect.btn.modal-action.modal-close(href='#', class=appdata.ui.theme.buttonColor) #{__('Close')}
+    a.waves-effect.btn.modal-action.modal-close(href='!#', class=appdata.ui.theme.buttonColor) #{__('Close')}
