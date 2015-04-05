@@ -9,7 +9,10 @@
     ],
     "version":"0.1.1",
     "homepage":"https://github.com/magdev/ifttt-elasticsearch",
-    "bugs":"https://github.com/magdev/ifttt-elasticsearch/issues",
+    "bugs":{
+        "url":"https://github.com/magdev/ifttt-elasticsearch/issues",
+        "email":"magdev3.0+bugs@gmail.com"
+    },
     "repository":{
         "type":"git",
         "url":"https://github.com/magdev/ifttt-elasticsearch.git"
