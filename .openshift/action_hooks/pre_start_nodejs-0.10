@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#export DEBUG=ifttt-elasticsearch:* 
+#export NODE_ENV=development
+export NODE_ENV=production
+echo "Set NODE_ENV to $NODE_ENV"
