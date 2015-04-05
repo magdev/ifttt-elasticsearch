@@ -36,5 +36,7 @@
     "Yeah! Something's broken!":"Yeah! Irgendwas ist kaputt!",
     "Search all the things!":"Search all the things!",
     "Magstore":"Magstore",
-    "Version %s":"Version %s"
+    "Version %s":"Version %s",
+    "Push":"Push",
+    "Enter an URL":"Gib eine URL ein"
 }
