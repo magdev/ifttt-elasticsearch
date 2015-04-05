@@ -6,6 +6,9 @@ body {
 main {
     flex: 1 0 auto;
 }
+.hide {
+	display: none !important;
+}
 .footer-copyright {
 	padding: 0 20px;
 }

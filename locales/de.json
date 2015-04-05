@@ -41,5 +41,18 @@
     "Enter an URL":"Gib eine URL ein",
     "Website":"Webseite",
     "Home":"Home",
-    "Issues":"Fehlermeldungen"
+    "Issues":"Fehlermeldungen",
+    "Welcome to %s":"Willkommen in %s",
+    "This is the personal Websearch of":"Dies ist die persönliche Websuche von",
+    "Login":"Anmelden",
+    "This is the personal Websearch of ":"Dies ist die persönliche Websuche von ",
+    "Username":"Benutzername",
+    "Password":"Passwort",
+    "Settings":"Einstellungen",
+    "Base Color":"Basisfarbe",
+    "Button Color":"Buttonfarbe",
+    "Text Color":"Textfarbe",
+    "Application Settings":"Anwendungseinstellungen",
+    "Save":"Speichern",
+    "Colors":"Farben"
 }
