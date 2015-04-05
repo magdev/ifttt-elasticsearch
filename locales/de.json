@@ -38,5 +38,8 @@
     "Magstore":"Magstore",
     "Version %s":"Version %s",
     "Push":"Push",
-    "Enter an URL":"Gib eine URL ein"
+    "Enter an URL":"Gib eine URL ein",
+    "Website":"Webseite",
+    "Home":"Home",
+    "Issues":"Fehlermeldungen"
 }
