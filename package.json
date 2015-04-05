@@ -22,7 +22,7 @@
     "main":"./bin/www",
     "scripts":{
         "start":"node ./bin/www",
-        "postinstall":"bower install",
+        "postinstall":"HOME=$HOME/app-root/runtime/repo && bower update",
         "debug-start":"node --debug=9222 ./bin/www"
     },
     "dependencies":{
