@@ -1,7 +1,7 @@
 {
     "name":"ifttt-elasticsearch",
     "description":"Connect your personal elasticsearch-server to ifttt",
-    "version":"0.1.0",
+    "version":"0.1.1",
     "authors":[
         "Marco Grätsch <magdev3.0@gmail.com>"
     ],
