@@ -2,7 +2,11 @@ ul.right.hide-on-med-and-down
   li.donate: a.modal-trigger.yellow-text.darken-1(href='#donate') #{__('Love this tool?')}
   li: a(href='/stream') #{__('Stream')}
   li: a(href='/search') #{__('Search')}
-  li: a.modal-trigger(href='#info') #{__('Info')}
-  li: a(href='/logout') #{__('Logout')}
+  li
+    a.modal-trigger(href='#info', title=__('Info'))
+      i.mdi-action-info-outline
+  li
+    a(href='/logout', title=__('Logout'))
+      i.mdi-action-exit-to-app
 a.button-collapse(href='#', data-activates='nav-mobile')
   i.mdi-navigation-menu
