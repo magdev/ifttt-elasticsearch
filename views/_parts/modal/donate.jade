@@ -4,18 +4,18 @@
     p #{__('If you like this software feel free to donate something')}
     .row 
       .col.s12.m4.center-align.box
-        .box-body 
-          img.circle(src='/img/logo/paypal-128.png', alt='Paypal')
-          form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_blank')
-            input(type='hidden', name='cmd', value='_donations')
-            input(type='hidden', name='business', value='magdev3.0@googlemail.com')
-            input(type='hidden', name='lc', value='US')
-            input(type='hidden', name='item_name', value='Marco Grätsch (IFTTT-Elasticsearch)')
-            input(type='hidden', name='no_note', value='0')
-            input(type='hidden', name='currency_code', value='EUR')
-            input(type='hidden', name='bn', value='PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest')
-        .box-footer
-          button.waves-effect.btn(type='submit', name='submit', class=appdata.ui.theme.buttonColor) #{__('Paypal')}
+        form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_blank')
+          .box-body 
+            img.circle(src='/img/logo/paypal-128.png', alt='Paypal')
+              input(type='hidden', name='cmd', value='_donations')
+              input(type='hidden', name='business', value='magdev3.0@googlemail.com')
+              input(type='hidden', name='lc', value='US')
+              input(type='hidden', name='item_name', value='Marco Grätsch (IFTTT-Elasticsearch)')
+              input(type='hidden', name='no_note', value='0')
+              input(type='hidden', name='currency_code', value='EUR')
+              input(type='hidden', name='bn', value='PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest')
+          .box-footer
+            button.waves-effect.btn(type='submit', name='submit', class=appdata.ui.theme.buttonColor) #{__('Paypal')}
       .col.s12.m4.center-align.box
         .box-body
           img.circle(src='/img/logo/bitcoin-128.png', alt='Bitcoin')
