@@ -38,7 +38,8 @@ app:
 # Elasticsearch Settings
 elasticsearch:
   host: "es-prod.example.org"
-  index: "your-index"
+  index: 
+    name: "your-index"
   
 # Session Settings
 session:
@@ -46,4 +47,4 @@ session:
   
 # Users
 users:
-  - { username: testuser, password: changeme, email: "testuser@example.com", role: admin }
+  - { username: "testuser", password: "changeme", email: "testuser@example.com", role: "admin" }

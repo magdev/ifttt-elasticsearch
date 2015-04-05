@@ -62,7 +62,7 @@ session:
   
 # Users
 users:
-  - { username: testuser, password: changeme, email: "testuser@example.com", role: "admin" }
+  - { username: "testuser", password: "changeme", email: "testuser@example.com", role: "admin" }
   
 # Cache Settings
 cache:
