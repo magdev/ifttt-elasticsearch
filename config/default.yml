@@ -52,11 +52,9 @@ app:
 elasticsearch:
   host: "es.example.org"
   log: trace
-  
-# Index Settings
-index:
-  name: ifttt
-  type: common
+  index:
+    name: ifttt
+    type: common
   
 # Session Settings
 session:

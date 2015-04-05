@@ -38,6 +38,7 @@ app:
 # Elasticsearch Settings
 elasticsearch:
   host: "es-prod.example.org"
+  index: "your-index"
   
 # Session Settings
 session:
