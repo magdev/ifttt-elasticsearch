@@ -25,4 +25,4 @@ block body
                 img(src=slide._source.image, alt=slide._source.title)
                 .caption.left-align
                   h3 #{slide._source.title}
-                  //-h5.light.grey-text.text-lighten-3.hide-on-small-and-down!= slide._source.description
+                  p.light.grey-text.text-lighten-3: em #{__('%s from %s', moment(new Date(slide._source.timestamp)).fromNow(), slide._source.datasource)}
