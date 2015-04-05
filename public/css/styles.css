@@ -125,7 +125,7 @@ textarea.code {
     flex-direction: column;
 }
 #info .box {
-    min-height: 250px;
+    min-height: 210px;
 }
 #donate .box {
     min-height: 200px;

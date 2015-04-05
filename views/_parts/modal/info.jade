@@ -20,18 +20,18 @@
               a(href=pckg.bugs, target='_blank') #{__('Issues')}
     .row
       .col.s12.m4.hide-on-med-and-down.box
-        p.box-title #{__('Bookmarklet')}
-        p.box-body #{__('Drag this button over your bookmarks to push content from everywhere into the search-server.')}
-        p.box-footer.center-align: a.btn.btn-bookmarklet(href=bookmarklet(), class=appdata.ui.theme.buttonColor) #{__('Push to %s', appdata.name)}
+        h5.box-title #{__('Bookmarklet')}
+        .box-body #{__('Drag this button over your bookmarks to push content from everywhere into the search-server.')}
+        .box-footer.center-align: a.btn.btn-bookmarklet(href=bookmarklet(), class=appdata.ui.theme.buttonColor) #{__('Push to %s', appdata.name)}
       .col.s12.m4.box
-        p.box-title #{__('Search-Plugin')}
-        p.box-body #{__('To use the search directly in the browser add the Search-Plugin.')}
-        p.box-footer.center-align: a.btn.add-search(href='#{baseurl}/opensearch.xml', class=appdata.ui.theme.buttonColor) #{__('Add Search-Plugin')}
+        h5.box-title #{__('Search-Plugin')}
+        .box-body #{__('To use the search directly in the browser add the Search-Plugin.')}
+        .box-footer.center-align: a.btn.add-search(href='#{baseurl}/opensearch.xml', class=appdata.ui.theme.buttonColor) #{__('Add Search-Plugin')}
       if isAdmin()
         .col.s12.m4.box
-          p.box-title #{__('Elasticsearch Head')}
-          p.box-body #{__('Open the Elasticsearch Head-Plugin in a new tab.')}
-          p.box-footer.center-align: a.waves-effect.btn(href='#{config.elasticsearch.host}/_plugin/head', target='_blank', class=appdata.ui.theme.buttonColor) #{__('Open in Browser')}
+          h5.box-title #{__('Elasticsearch Head')}
+          .box-body #{__('Open the Elasticsearch Head-Plugin in a new tab.')}
+          .box-footer.center-align: a.waves-effect.btn(href='#{config.elasticsearch.host}/_plugin/head', target='_blank', class=appdata.ui.theme.buttonColor) #{__('Open in Browser')}
         
   .modal-footer
     a.waves-effect.btn.modal-action.modal-close(href='!#', class=appdata.ui.theme.buttonColor) #{__('Close')}
