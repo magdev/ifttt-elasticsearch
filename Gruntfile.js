@@ -28,7 +28,12 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
 
+    var outputdir = (grunt.option('outputdir') || process.cwd());
+    
     grunt.initConfig({
+        outputdir: outputdir,
+        pkg: grunt.file.readJSON('package.json'),
+        
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
@@ -62,10 +67,20 @@ module.exports = function(grunt) {
             all: { 
                 src: ['test/**/*_test.js'] 
             }
+        },
+        less: {
+            options:{
+                compress:true
+            },
+            dist: {
+                files: {
+                    '<%= outputdir %>public/css/styles.css': 'less/styles.less'
+                }
+            }
         }
     });
     
     grunt.loadNpmTasks('grunt-simple-mocha');
 
-    grunt.registerTask('default', [ 'jshint', 'simplemocha' ]);
+    grunt.registerTask('default', [ 'less', 'jshint', 'simplemocha' ]);
 };

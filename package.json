@@ -61,6 +61,7 @@
         "bower":"*",
         "grunt-contrib-jshint":"*",
         "grunt-contrib-watch":"*",
+        "grunt-contrib-less":"*",
         "load-grunt-tasks":"*",
         "time-grunt":"*",
         "jshint-stylish":"*",
