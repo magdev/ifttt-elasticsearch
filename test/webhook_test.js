@@ -34,10 +34,17 @@ var request = require('supertest'),
  * Test ifttt webhook
  */
 describe('webhook', function() {
+
     it('responds with Error 404 (default)', function(done) {
         request(app)
 	        .get('/xmlrpc.php')
 	        .expect(404, done);
+    });
+    
+    it('responds with 200 on /wp-admin', function(done) {
+        request(app)
+            .get('/wp-admin')
+            .expect(200, done);
     });
 })
     
