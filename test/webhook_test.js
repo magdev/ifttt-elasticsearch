@@ -24,20 +24,20 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+ 
 var request = require('supertest'), 
     express = require('express'),
     app = require('../app');
 
 
 /**
- * Test headerFilter()
+ * Test ifttt webhook
  */
 describe('webhook', function() {
-    it('webhook default respond with Error 404', function(done) {
+    it('responds with Error 404 (default)', function(done) {
         request(app)
 	        .get('/xmlrpc.php')
 	        .expect(404, done);
     });
-    
 })
     
