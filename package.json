@@ -63,6 +63,7 @@
         "grunt-contrib-jshint":"*",
         "grunt-contrib-watch":"*",
         "grunt-contrib-less":"*",
+        "grunt-jsonlint":"*",
         "load-grunt-tasks":"*",
         "time-grunt":"*",
         "jshint-stylish":"*",

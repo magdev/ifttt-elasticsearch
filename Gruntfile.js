@@ -35,6 +35,10 @@ module.exports = function(grunt) {
         outputdir: outputdir,
         pkg: grunt.file.readJSON('package.json'),
         
+        jsonlint: {
+            src: [ '*.json', 'config/elasticsearch/*.json' ]
+        },
+        
         jshint: {
             options: {
                 jshintrc: '.jshintrc',
@@ -81,7 +85,7 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', [ 'less', 'jshint', 'simplemocha' ]);
-    grunt.registerTask('build', [ 'less', 'jshint' ]);
-    grunt.registerTask('test', [ 'jshint', 'simplemocha' ]);
+    grunt.registerTask('default', [ 'less', 'jshint', 'jsonlint', 'simplemocha' ]);
+    grunt.registerTask('build', [ 'less', 'jshint', 'jsonlint' ]);
+    grunt.registerTask('test', [ 'jshint', 'jsonlint', 'simplemocha' ]);
 };
