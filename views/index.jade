@@ -11,7 +11,7 @@ block body
       p.center.flow-text #{__('This is the personal Websearch of')} 
         a(href='mailto:#{owner.email}', target='blank') #{owner.name}
       .center
-        a.btn.waves-effect(href='/login', class=appdata.ui.theme.buttonColor) #{__('Login')} 
+        a.btn.waves-effect.large(href='/login', class=appdata.ui.theme.buttonColor) #{__('Login')} 
       
   if (user)
     include _parts/search
