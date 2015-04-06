@@ -25,6 +25,9 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
+process.env.NODE_CONFIG_DIR = __dirname + '/../config';
+process.env.NODE_ENV = 'test';
+
 var request = require('supertest'), 
     express = require('express'),
     app = require('../app');
