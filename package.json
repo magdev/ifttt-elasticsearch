@@ -26,7 +26,8 @@
     "scripts":{
         "start":"node ./bin/www",
         "postinstall":"bower install",
-        "debug-start":"node --debug=9222 ./bin/www"
+        "debug-start":"node --debug=9222 ./bin/www",
+        "test":"grunt"
     },
     "dependencies":{
         "body-parser":"~1.10.2",
@@ -57,7 +58,16 @@
         "yaml":"*"
     },
     "devDependencies":{
-        "bower":"*"
+        "bower":"*",
+        "grunt-contrib-jshint":"*",
+        "grunt-contrib-watch":"*",
+        "load-grunt-tasks":"*",
+        "time-grunt":"*",
+        "jshint-stylish":"*",
+        "mocha":"*",
+        "supertest":"*",
+        "grunt-simple-mocha":"*",
+        "express":"4.*"
     },
     "bin":{
         "ifttt-es":"./bin/cli"
