@@ -51,7 +51,7 @@ app:
 # Elasticsearch Settings  
 elasticsearch:
   host: "es.example.org"
-  log: trace
+  log: error
   index:
     name: ifttt
     type: common
