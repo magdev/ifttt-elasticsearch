@@ -25,9 +25,9 @@
     "main":"./bin/www",
     "scripts":{
         "start":"node ./bin/www",
-        "install":"grunt build",
-        "postinstall":"bower install",
         "debug-start":"node --debug=9222 ./bin/www",
+        "postinstall":"bower install",
+        "prepublish":"grunt build",
         "test":"grunt test"
     },
     "dependencies":{
