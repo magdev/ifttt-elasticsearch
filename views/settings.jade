@@ -1,0 +1,25 @@
+extends _layout
+
+block header
+  title #{__(title)} | #{appdata.name}
+  meta(name='description', content='#{__(appdata.description)}')
+  
+block body
+  h2.hide #{__('Application Settings')}
+  form(action='/settings', method='post')
+    h3 #{__('Colors')}
+    .row
+      .input-field.col.s12.m4
+        input#baseColor(type='text', name='baseColor', required, value=appdata.ui.theme.baseColor)
+        label(for='baseColor') #{__('Base Color')}
+      .input-field.col.s12.m4
+        input#buttonColor(type='text', name='buttonColor', required, value=appdata.ui.theme.buttonColor)
+        label(for='buttonColor') #{__('Button Color')}
+      .input-field.col.s12.m4
+        input#textColor(type='text', name='textColor', required, value=appdata.ui.theme.textColor)
+        label(for='textColor') #{__('Text Color')}
+        
+    .row
+      .col.s12.center-align
+        input(type='hidden', name='_csrf', value='#{csrfToken}')
+        button.waves-effect.waves-light.btn.btn-submit(type='submit', class=appdata.ui.theme.buttonColor) #{__('Save')} 

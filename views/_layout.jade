@@ -26,7 +26,7 @@ html
           #message(style='display:none') #{message}
         block body
         
-        if (user)
+        if (user && !disableAddButton)
           .fixed-action-btn#share-button(style='bottom: 45px; right: 24px;')
             a.btn-floating.btn-large.waves-effect.waves-light.btn-add(class=appdata.ui.theme.buttonColor)
               i.mdi-content-add

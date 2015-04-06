@@ -25,37 +25,19 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
-var webhook = require('express-ifttt-webhook'),
-    User = require('./user'),
-    Parser = require('./ifttt/parser'),
-    types = require('../config/elasticsearch/types.json'),
-    debug = require('debug')('ifttt-elasticsearch:ifttt'),
-    
-    generateRequest = function(json, config) {
-        debug('Generate request using ' + JSON.stringify(json));
-        return {
-            index: (config.elasticsearch.index.name || 'ifttt'),
-            type: (json.type || config.elasticsearch.index.type || 'common'),
-            body: json
-        };
-    },
-    
-    verifyUser = function(username, password, done) {
-        debug('Verify user ' + username);
-        return User.verify(username, password, done);
-    };
-    
+// Default layout measures
+@default-padding:               20px;
 
-module.exports = function(app, config, es) {
-    var parser = new Parser(types, config);
-    
-    app.use(webhook(verifyUser, function(json, done) {
-        debug('Webhook called with ' + JSON.stringify(json));
-        es.index(generateRequest(parser.parse(json), config), function(error, response) {
-            if (error) {
-                return done(error, response);
-            }
-            return done();
-        });
-    }));
-};
+// Headroom
+@headromm-transition:           transform 300ms linear;
+
+// Slider
+@slider-title-background:       rgba(64, 64, 64, .5);
+@slider-title-shadow-color:     #333;
+
+// Table
+@table-condensed-padding:       5px;
+
+// Card
+@card-title-background:         @slider-title-background;
+@card-title-shadow-color:       @slider-title-shadow-color;

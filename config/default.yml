@@ -51,7 +51,7 @@ app:
 # Elasticsearch Settings  
 elasticsearch:
   host: "es.example.org"
-  log: trace
+  log: error
   index:
     name: ifttt
     type: common
@@ -62,7 +62,7 @@ session:
   
 # Users
 users:
-  - { username: testuser, password: changeme, email: "testuser@example.com", role: "admin" }
+  - { username: "testuser", password: "changeme", email: "testuser@example.com", role: "admin" }
   
 # Cache Settings
 cache:

@@ -24,38 +24,25 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
- 
-var webhook = require('express-ifttt-webhook'),
-    User = require('./user'),
-    Parser = require('./ifttt/parser'),
-    types = require('../config/elasticsearch/types.json'),
-    debug = require('debug')('ifttt-elasticsearch:ifttt'),
-    
-    generateRequest = function(json, config) {
-        debug('Generate request using ' + JSON.stringify(json));
-        return {
-            index: (config.elasticsearch.index.name || 'ifttt'),
-            type: (json.type || config.elasticsearch.index.type || 'common'),
-            body: json
-        };
-    },
-    
-    verifyUser = function(username, password, done) {
-        debug('Verify user ' + username);
-        return User.verify(username, password, done);
-    };
-    
 
-module.exports = function(app, config, es) {
-    var parser = new Parser(types, config);
-    
-    app.use(webhook(verifyUser, function(json, done) {
-        debug('Webhook called with ' + JSON.stringify(json));
-        es.index(generateRequest(parser.parse(json), config), function(error, response) {
-            if (error) {
-                return done(error, response);
-            }
-            return done();
-        });
-    }));
-};
+@import 'variables.less';
+
+.headroom,
+#share-button,
+.github-badge {
+    transition: @headromm-transition;
+}
+.headroom--pinned,
+.github-badge.pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned,
+.github-badge.unpinned {
+    transform: translateY(-100%);
+}
+#share-button.pinned {
+    transform: translate(0,initial);
+}
+#share-button.unpinned {
+    transform: translate(0,130px);
+}

@@ -7,9 +7,12 @@
         "search",
         "indexing"
     ],
-    "version":"0.1.1",
+    "version":"0.1.2",
     "homepage":"https://github.com/magdev/ifttt-elasticsearch",
-    "bugs":"https://github.com/magdev/ifttt-elasticsearch/issues",
+    "bugs":{
+        "url":"https://github.com/magdev/ifttt-elasticsearch/issues",
+        "email":"magdev3.0+bugs@gmail.com"
+    },
     "repository":{
         "type":"git",
         "url":"https://github.com/magdev/ifttt-elasticsearch.git"
@@ -22,8 +25,10 @@
     "main":"./bin/www",
     "scripts":{
         "start":"node ./bin/www",
+        "debug-start":"node --debug=9222 ./bin/www",
         "postinstall":"HOME=$HOME/app-root/runtime/repo && bower update",
-        "debug-start":"node --debug=9222 ./bin/www"
+        "prepublish":"grunt build",
+        "test":"grunt test"
     },
     "dependencies":{
         "body-parser":"~1.10.2",
@@ -54,6 +59,21 @@
         "yaml":"*"
     },
     "devDependencies":{
-        "bower":"*"
+        "bower":"*",
+        "grunt-contrib-jshint":"*",
+        "grunt-contrib-watch":"*",
+        "grunt-contrib-less":"*",
+        "grunt-jsonlint":"*",
+        "load-grunt-tasks":"*",
+        "time-grunt":"*",
+        "jshint-stylish":"*",
+        "mocha":"*",
+        "supertest":"*",
+        "grunt-simple-mocha":"*",
+        "express":"4.*",
+        "matchdep":"*"
+    },
+    "bin":{
+        "ifttt-es":"./bin/cli"
     }
 }

@@ -25,37 +25,19 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
-var webhook = require('express-ifttt-webhook'),
-    User = require('./user'),
-    Parser = require('./ifttt/parser'),
-    types = require('../config/elasticsearch/types.json'),
-    debug = require('debug')('ifttt-elasticsearch:ifttt'),
-    
-    generateRequest = function(json, config) {
-        debug('Generate request using ' + JSON.stringify(json));
-        return {
-            index: (config.elasticsearch.index.name || 'ifttt'),
-            type: (json.type || config.elasticsearch.index.type || 'common'),
-            body: json
-        };
-    },
-    
-    verifyUser = function(username, password, done) {
-        debug('Verify user ' + username);
-        return User.verify(username, password, done);
-    };
-    
+var request = require('supertest'), 
+    express = require('express'),
+    app = require('../app');
 
-module.exports = function(app, config, es) {
-    var parser = new Parser(types, config);
+
+/**
+ * Test ifttt webhook
+ */
+describe('webhook', function() {
+    it('responds with Error 404 (default)', function(done) {
+        request(app)
+	        .get('/xmlrpc.php')
+	        .expect(404, done);
+    });
+})
     
-    app.use(webhook(verifyUser, function(json, done) {
-        debug('Webhook called with ' + JSON.stringify(json));
-        es.index(generateRequest(parser.parse(json), config), function(error, response) {
-            if (error) {
-                return done(error, response);
-            }
-            return done();
-        });
-    }));
-};

@@ -15,7 +15,7 @@
 		                        }
 		                    });
 		                });
-		            };
+		            }
 		        });
 		    });
 		    
@@ -77,11 +77,12 @@
     });
     $('.btn-add').click(function(ev) {
         ev.preventDefault();
-        window.open('/push', 'indexall', 'locationbar=yes,width=480px,height=500px,statusbar=no,menubar=no,scrollbars=yes,toolbar=no,resizable=yes')
+        window.open('/push', 'indexall', 'locationbar=yes,width=480px,height=500px,statusbar=no,menubar=no,scrollbars=yes,toolbar=no,resizable=yes');
     });
     var shr = new Share();
     $('.slider').slider({
-        full_width: true
+        full_width: true,
+        interval: 5000
     });
     $('.collapsible').collapsible();
 })(jQuery);

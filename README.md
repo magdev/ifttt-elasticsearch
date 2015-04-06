@@ -3,15 +3,9 @@
 Index all your stuff with IFTTT and Elasticsearch.
 
 
-## Installation
+## Get IFTTT-Elasticsearch Up and Running
 
-### 1. Install and Configure [Elasticsearch](http://www.elasticsearch.org/)
-
-### 2. Install and Configure IFTTT-Elasticsearch
-
-### 3. Configure IFTTT Recipes
-
-### 4. Visit the Web-Frontend
+[![Watch the Screencast](docs/img/ifttt-elasticsearch-up-and-running.png)](https://drive.google.com/file/d/0B1yD32e7QT2PM0FpaHFFSUdWcFU/view?usp=sharing)
 
 
 ## License
