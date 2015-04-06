@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         
         jsonlint: {
-            src: [ '*.json', 'config/elasticsearch/*.json' ]
+            src: [ '*.json', 'config/elasticsearch/*.json', 'locales/*.json' ]
         },
         
         jshint: {
