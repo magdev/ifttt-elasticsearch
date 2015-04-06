@@ -81,7 +81,8 @@
     });
     var shr = new Share();
     $('.slider').slider({
-        full_width: true
+        full_width: true,
+        interval: 5000
     });
     $('.collapsible').collapsible();
 })(jQuery);
