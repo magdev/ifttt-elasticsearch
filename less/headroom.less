@@ -24,19 +24,25 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
- 
+
 @import 'variables.less';
-@import 'common.less';
-@import 'headroom.less';
-@import 'slider.less';
-@import 'card.less';
-@import 'box.less';
-@import 'table.less';
 
-
-#info .box {
-    min-height: 210px;
+.headroom,
+#share-button,
+.github-badge {
+    transition: @headromm-transition;
 }
-#donate .box {
-    min-height: 200px;
+.headroom--pinned,
+.github-badge.pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned,
+.github-badge.unpinned {
+    transform: translateY(-100%);
+}
+#share-button.pinned {
+    transform: translate(0,initial);
+}
+#share-button.unpinned {
+    transform: translate(0,130px);
 }

@@ -24,19 +24,53 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
- 
+
 @import 'variables.less';
-@import 'common.less';
-@import 'headroom.less';
-@import 'slider.less';
-@import 'card.less';
-@import 'box.less';
-@import 'table.less';
 
-
-#info .box {
-    min-height: 210px;
-}
-#donate .box {
-    min-height: 200px;
+.card {
+    .card-date {
+        padding: 0 @default-padding;
+        line-height: 2;
+    }
+    .card-title {
+        font-weight: 500;
+    }
+    .card-content {
+        .card-title {
+            line-height: 30px;
+        }
+        img {
+            display: none;
+        }
+    }
+    .card-image {
+        .card-title {
+            text-shadow: 1px 2px 0 @card-title-shadow-color;
+            background: @card-title-background;
+            bottom: 6px;
+            width: 100%;
+        }
+    }
+    .card-media {
+        position: relative;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        
+        iframe, object {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            border: 0;
+        }
+        
+        object embed {
+            height: 100%;
+            width: 100%;
+        }
+    }
 }

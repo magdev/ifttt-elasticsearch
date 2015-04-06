@@ -27,7 +27,8 @@
 module.exports = function(grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
-
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+    
     var outputdir = (grunt.option('outputdir') || process.cwd());
     
     grunt.initConfig({
@@ -74,13 +75,13 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    '<%= outputdir %>public/css/styles.css': 'less/styles.less'
+                    '<%= outputdir %>/public/css/styles.css': 'less/styles.less'
                 }
             }
         }
     });
-    
-    grunt.loadNpmTasks('grunt-simple-mocha');
 
     grunt.registerTask('default', [ 'less', 'jshint', 'simplemocha' ]);
+    grunt.registerTask('build', [ 'less', 'jshint' ]);
+    grunt.registerTask('test', [ 'jshint', 'simplemocha' ]);
 };

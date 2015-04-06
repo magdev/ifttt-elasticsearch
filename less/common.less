@@ -24,19 +24,61 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
- 
+
 @import 'variables.less';
-@import 'common.less';
-@import 'headroom.less';
-@import 'slider.less';
-@import 'card.less';
-@import 'box.less';
-@import 'table.less';
 
-
-#info .box {
-    min-height: 210px;
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
-#donate .box {
+main {
+    flex: 1 0 auto;
+}
+.hide {
+    display: none !important;
+}
+.footer-copyright {
+    padding: 0 @default-padding;
+}
+
+.pagination {
+    display: none;
+}
+.share-button {
+    font-size: 20px;
+}
+.share-content {
+    font-size: 13px;
+}
+
+@media only screen and (min-width: 992px) {
+    nav .hide-on-med-and-down .donate {
+        margin-right: 100px;
+    }
+}
+@media only screen and (max-width : 600px) {
+    .container {
+         padding: .3rem;
+         width: 94%;
+    }
+}
+.side-nav li a {
+    line-height: 2.5;
+    font-size: 120%;
+    display: block;
+}
+.side-nav li.donate {
+    margin-top: 50px;
+}
+
+li.donate a {
+    font-weight: 500;    
+}
+textarea.code {
+    font-family: "Courier New", Courier, monospace;
     min-height: 200px;
+}
+.search-field button {
+    margin-top: 10px;
 }

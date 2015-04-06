@@ -24,19 +24,17 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
- 
+
 @import 'variables.less';
-@import 'common.less';
-@import 'headroom.less';
-@import 'slider.less';
-@import 'card.less';
-@import 'box.less';
-@import 'table.less';
 
-
-#info .box {
-    min-height: 210px;
-}
-#donate .box {
-    min-height: 200px;
+.box {
+    display: flex;
+    flex-direction: column;
+    .box-title {
+        font-weight: 700;
+    }
+    .box-body {
+        flex: 1 0 auto;
+    }
+    .box-footer {}
 }

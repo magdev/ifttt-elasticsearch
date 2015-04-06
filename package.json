@@ -25,9 +25,10 @@
     "main":"./bin/www",
     "scripts":{
         "start":"node ./bin/www",
+        "install":"grunt build",
         "postinstall":"bower install",
         "debug-start":"node --debug=9222 ./bin/www",
-        "test":"grunt"
+        "test":"grunt test"
     },
     "dependencies":{
         "body-parser":"~1.10.2",
@@ -68,7 +69,8 @@
         "mocha":"*",
         "supertest":"*",
         "grunt-simple-mocha":"*",
-        "express":"4.*"
+        "express":"4.*",
+        "matchdep":"*"
     },
     "bin":{
         "ifttt-es":"./bin/cli"

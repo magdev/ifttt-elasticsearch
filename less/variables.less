@@ -25,18 +25,19 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
-@import 'variables.less';
-@import 'common.less';
-@import 'headroom.less';
-@import 'slider.less';
-@import 'card.less';
-@import 'box.less';
-@import 'table.less';
+// Default layout measures
+@default-padding:               20px;
 
+// Headroom
+@headromm-transition:           transform 300ms linear;
 
-#info .box {
-    min-height: 210px;
-}
-#donate .box {
-    min-height: 200px;
-}
+// Slider
+@slider-title-background:       rgba(64, 64, 64, .5);
+@slider-title-shadow-color:     #333;
+
+// Table
+@table-condensed-padding:       5px;
+
+// Card
+@card-title-background:         @slider-title-background;
+@card-title-shadow-color:       @slider-title-shadow-color;
