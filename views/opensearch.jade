@@ -4,4 +4,4 @@ OpenSearchDescription(xmlns='http://a9.com/-/spec/opensearch/1.1/')
   Description #{__(appdata.description)}
   Contact #{owner.email}
   Url(type='text/html', template='#{baseurl}/search?q={searchTerms}&amp;page={startPage?}')
-  Url(type='application/rss+xml', template='#{baseurl}/feed.xml?q={searchTerms}')
+  Url(type='application/rss+xml', template='#{baseurl}/feed.xml?q={searchTerms}&amp;page={startPage?}')
