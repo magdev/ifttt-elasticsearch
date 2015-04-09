@@ -39,10 +39,22 @@ app:
       baseColor: "light-blue lighten-1"
       buttonColor: "light-blue darken-1"
       textColor: "light-blue-text darken-2"
-    recent:
-      style: cards
     search:
       style: cards
+    stream:
+      style: cards
+      searchTerm: "*"
+      sort: "timestamp:desc"
+      resultSize: 12
+    home:
+      slider:
+        resultSize: 8
+        searchTerm: "* +image:*"
+        sort: "timestamp:desc"
+    feed:
+      resultSize: 10
+      searchTerm: "*"
+      sort: "timestamp:desc"
     github:
       enable: true
       repository: "magdev/ifttt-elasticsearch"
