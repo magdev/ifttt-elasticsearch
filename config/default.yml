@@ -45,6 +45,8 @@ i18n:
 app:
   name: "IFTTT-Elasticsearch"
   description: "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you."
+  options:
+    forceHTTPS: false
   ui:
     theme:
       baseColor: "light-blue lighten-1"
