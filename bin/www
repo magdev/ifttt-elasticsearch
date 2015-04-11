@@ -29,6 +29,8 @@
 var app = require('../app'),
     debug = require('debug')('ifttt-elasticsearch:server'),
     http = require('http'),
+    https = require('https'),
+    fs = require('fs'),
     
 
     normalizePort = function(val) {
@@ -84,3 +86,17 @@ var server = http.createServer(app);
 server.listen(port, ipaddr);
 server.on('error', onError);
 server.on('listening', onListening);
+
+var keyfile = app.get('config').app.options.httpsServer.keyfile,
+    certfile = app.get('config').app.options.httpsServer.certfile;
+if (keyfile && certfile) {
+    var options = {
+            key: fs.readFileSync(keyfile),
+            cert: fs.readFileSync(certfile)
+        };
+
+    var sslserver = https.createServer(options, app);
+    sslserver.listen(app.get('config').app.options.httpsServer.port, ipaddr);
+    sslserver.on('error', onError);
+    sslserver.on('listening', onListening);
+}

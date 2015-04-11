@@ -47,6 +47,10 @@ app:
   description: "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you."
   options:
     forceHTTPS: false
+    httpsServer:
+      keyfile: ""
+      certfile: ""
+    jsExtension: 'js'
   ui:
     theme:
       baseColor: "light-blue lighten-1"
