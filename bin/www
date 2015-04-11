@@ -77,9 +77,11 @@ var app = require('../app'),
         debug('Listening on ' + bind);
     };
 
-var port = normalizePort(process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || '3000'),
+var port = normalizePort(process.env.OPENSHIFT_NODEJS_PORT || app.get('config').app.options.httpServer.port || process.env.PORT || '3000'),
+    sslport = normalizePort(process.env.OPENSHIFT_NODEJS_PORT || app.get('config').app.options.httpsServer.port || '3443'),
     ipaddr = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 app.set('port', port);
+app.set('ssl port', sslport);
 app.set('ipaddr', ipaddr);
 
 var server = http.createServer(app);
@@ -96,7 +98,7 @@ if (keyfile && certfile) {
         };
 
     var sslserver = https.createServer(options, app);
-    sslserver.listen(app.get('config').app.options.httpsServer.port, ipaddr);
+    sslserver.listen(sslport, ipaddr);
     sslserver.on('error', onError);
     sslserver.on('listening', onListening);
 }

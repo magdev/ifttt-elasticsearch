@@ -47,9 +47,12 @@ app:
   description: "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you."
   options:
     forceHTTPS: false
+    httpServer:
+      port: 3000
     httpsServer:
       keyfile: ""
       certfile: ""
+      port: 3443
     jsExtension: 'js'
   ui:
     theme:
