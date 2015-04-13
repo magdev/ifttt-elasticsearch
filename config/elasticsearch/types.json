@@ -319,5 +319,49 @@
                 "index_analyzer":"html"
             }
         }
+    },
+    "event":{
+        "properties":{
+            "title":{
+                "type":"string", 
+                "store":true
+            },
+            "description":{
+                "type":"string", 
+                "store":true,
+                "index":"analyzed",
+                "analyzer":"html",
+                "index_analyzer":"html"
+            },
+            "datasource":{
+                "type":"string", 
+                "store":true 
+            },
+            "url":{
+                "type":"string",
+                "store":true
+            },
+            "datetime":{
+                "type":"string",
+                "store":true,
+                "index":"not_analyzed"
+            },
+            "timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
+            "start":{
+                "type":"date",
+                "store":true
+            },
+            "end":{
+                "type":"date",
+                "store":true
+            },
+            "location":{
+                "type":"string",
+                "store":true
+            }
+        }
     }
 }
