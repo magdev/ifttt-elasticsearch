@@ -47,7 +47,7 @@ Visit https://mysearch-example.openshift.local/types to see a full list of avail
 * Test more IFTTT channels
 * Scrape the entire page on index
 * More translations
-* Index managament
+* Index management
 * maintenance scripts
 * Implement tags
 * Add more semantics to the frontend
