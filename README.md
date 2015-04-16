@@ -14,7 +14,7 @@ With this application you can connect your personal [Elasticsearch-Server](https
 
 _(Screencast, ~15MB, 720p MP4)_
 
-[![Watch the Screencast](docs/img/ifttt-elasticsearch-up-and-running.png Screencast, ~15MB, 720p MP4)](https://drive.google.com/file/d/0B1yD32e7QT2PM0FpaHFFSUdWcFU/view?usp=sharing)
+[![Watch the Screencast](docs/img/ifttt-elasticsearch-up-and-running.png)](https://drive.google.com/file/d/0B1yD32e7QT2PM0FpaHFFSUdWcFU/view?usp=sharing)
 
 
 
@@ -27,7 +27,7 @@ _(Screencast, ~15MB, 720p MP4)_
 
 ### Configure a Recipe
 
-![Configure an IFTTT-Recipe](docs/img/ifttt-configure-recipe.png Note the syntax of the description field)
+![Configure an IFTTT-Recipe](docs/img/ifttt-configure-recipe.png)
 
 #### Available types and fields
 
