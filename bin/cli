@@ -40,7 +40,7 @@ var program = require('commander'),
 	scrapeDocument = function(doc) {
     	scraper(doc._source.url, function(error, article) {
     		es.update({
-    			index: config.index.name,
+    			index: config.elasticsearch.index.name,
 				type: doc._type,
 				id: doc._id,
 				body: {
@@ -59,7 +59,7 @@ var program = require('commander'),
 	
 	indexDocument = function(doc) {
 		var obj = {
-				index: config.index.name,
+				index: config.elasticsearch.index.name,
 				type: doc._type,
 				body: doc._source
 			};
@@ -72,7 +72,7 @@ var program = require('commander'),
 function scrape(url) {
 	debug('Scraping URL ' + url);
 	es.search({
-		index: config.index.name,
+		index: config.elasticsearch.index.name,
         q: url
     }).then(function(body) {
     	body.hits.hits.forEach(scrapeDocument);
@@ -84,7 +84,7 @@ function scrape(url) {
 function scrapeAll() {
 	debug('Scraping all URLs');
 	es.search({
-		index: config.index.name,
+		index: config.elasticsearch.index.name,
         q: '*'
     }).then(function(body) {
     	body.hits.hits.forEach(scrapeDocument);
@@ -94,7 +94,7 @@ function scrapeAll() {
 }
 
 function moveIndex(source) {
-	debug('Moved documents from ' + source + ' to ' + config.index.name);	
+	debug('Moved documents from ' + source + ' to ' + config.elasticsearch.index.name);	
 	
 	es.search({
 		index: source,
