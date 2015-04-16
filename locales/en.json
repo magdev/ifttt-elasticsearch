@@ -1,3 +1,10 @@
 {
-    "Amazon Wishlist":"Amazon"
+    "Amazon Wishlist":"Amazon",
+    "IFTTT-ES":"IFTTT-ES",
+    "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you.":"Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you.",
+    "Welcome to %s":"Welcome to %s",
+    "This is the personal Websearch of":"This is the personal Websearch of",
+    "Login":"Login",
+    "Username":"Username",
+    "Password":"Password"
 }
