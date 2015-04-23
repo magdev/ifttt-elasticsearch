@@ -19,7 +19,7 @@
     .row
       .col.s10
         .card-date.grey-text.lighten-1 
-          em: small #{__('%s from %s', moment(new Date(row._source.timestamp)).fromNow(), row._source.datasource)}
+          em: small(title=row._source.timestamp) #{__('%s from %s', moment(new Date(row._source.timestamp)).fromNow(), row._source.datasource)}
       .col.s2.right-align
         a.dropdown-button.share-button.grey-text.lighten-1(href='!#', data-activates='share-#{row._id}')
           i.mdi-social-share

@@ -60,6 +60,18 @@ module.exports = function(grunt) {
             lib: {
                 files: '<%= jshint.lib.src %>',
                 tasks: [ 'jshint:lib' ]
+            },
+            less: {
+                files: 'app/less/*.less',
+                tasks: [ 'less:dist' ]
+            },
+            locales: {
+                files: 'app/locales/*.json',
+                tasks: [ 'jsonlint' ]
+            },
+            frontend: {
+                files: 'public/js/*.js',
+                tasks: [ 'uglify:all' ]
             }
         },
         

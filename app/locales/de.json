@@ -22,7 +22,7 @@
     "If you like this software feel free to donate something":"Wenn du dieses Tool liebst würde ich mich über ein kleine Spende sehr freuen.",
     "Paypal":"Paypal",
     "Bitcoin":"Bitcoin",
-    "Amazon Wishlist":"Amazon",
+    "Amazon Wishlist":"Amazon Wishlist",
     "%s from %s":"%s von %s",
     "Article from %s":"Artikel vom %s",
     "ID":"ID",
@@ -37,7 +37,7 @@
     "Search all the things!":"Search all the things!",
     "Version %s":"Version %s",
     "Push":"Push",
-    "Enter an URL":"Gib eine URL ein",
+    "Enter an URL":"Gib einen URL ein",
     "Website":"Webseite",
     "Home":"Home",
     "Issues":"Fehlermeldungen",
@@ -54,5 +54,8 @@
     "Application Settings":"Anwendungseinstellungen",
     "Save":"Speichern",
     "Colors":"Farben",
-    "IFTTT-ES":"IFTTT-ES"
+    "IFTTT-ES":"IFTTT-ES",
+    "Load previous items":"Vorherige Einträge laden",
+    "Load more items":"Weitere Einträge laden",
+    "You reached the end of the internet!":"Du hast das Ende des Internet erreicht!"
 }

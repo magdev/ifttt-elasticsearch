@@ -27,7 +27,7 @@
         "start":"node ./bin/www",
         "debug-start":"node --debug=9222 ./bin/www",
         "postinstall":"bower install",
-        "prepublish":"node_modules/.bin/grunt build",
+        "prepublish":"node_modules/.bin/grunt build && cd public/assets/jquery-ias && npm update && node_modules/.bin/grunt build",
         "test":"grunt test"
     },
     "dependencies":{
@@ -43,6 +43,7 @@
         "express":"~4.11.1",
         "express-ifttt-webhook":"~0.2.3",
         "gnu-terry-pratchett":"^0.0.2",
+        "grunt-contrib-concat":"^0.5.1",
         "i18n":"^0.5.0",
         "jade":"*",
         "js-striphtml":"^1.1.2",

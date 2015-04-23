@@ -17,8 +17,8 @@
         "materialize":"0.95.*",
         "jquery":"*",
         "moment":"~2.9.0",
-        "jquery-infinite-scroll":"~2.1.0",
         "share.js":"~0.0.1",
-        "headroom.js":"~0.7.0"
+        "headroom.js":"~0.7.0",
+        "jquery-ias":"~2.2.0"
     }
 }
