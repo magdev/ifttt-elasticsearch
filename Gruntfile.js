@@ -82,7 +82,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    '<%= outputdir %>/public/css/styles.css': 'less/styles.less'
+                    '<%= outputdir %>/public/css/styles.css': 'app/less/styles.less'
                 }
             }
         },
