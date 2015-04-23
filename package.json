@@ -7,7 +7,7 @@
         "search",
         "indexing"
     ],
-    "version":"0.1.2",
+    "version":"0.1.3",
     "homepage":"https://github.com/magdev/ifttt-elasticsearch",
     "bugs":{
         "url":"https://github.com/magdev/ifttt-elasticsearch/issues",
