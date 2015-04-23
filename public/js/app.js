@@ -65,16 +65,31 @@
         return false;
     });
     bindEventHandlers($('.card'));
-    $('.infsc-container').infinitescroll({
-        navSelector: '.pagination',
-        nextSelector: '.paginator-next',
-        itemSelector: '.infsc-item',
-        donetext: '',
-        loadingText: '',
-        loadingImg: ''
-    }, function(newElements) {
-        bindEventHandlers(newElements);
+    
+    var ias = $.ias({
+        container: '.infsc-container',
+        pagination: '.pagination',
+        next: '.paginator-next',
+        item: '.infsc-item',
+        delay: 500
     });
+    ias.extension(new IASSpinnerExtension());
+    ias.extension(new IASTriggerExtension({ 
+        offset: 100,
+        prevText: UILocale.ias.prevText,
+        text: UILocale.ias.nextText
+    }));
+    ias.extension(new IASPagingExtension());
+    ias.extension(new IASHistoryExtension({
+        prev: '.paginator-prev'
+    }));
+    ias.extension(new IASNoneLeftExtension({
+        text: UILocale.ias.noneLeft
+    }));
+    ias.on('loaded', function(data, items) {
+        bindEventHandlers(items);
+    });
+    
     $('.btn-add').click(function(ev) {
         ev.preventDefault();
         window.open('/push', 'indexall', 'locationbar=yes,width=480px,height=500px,statusbar=no,menubar=no,scrollbars=yes,toolbar=no,resizable=yes');

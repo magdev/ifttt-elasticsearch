@@ -30,19 +30,51 @@ owner:
   name: "Your Name"
   email: "your-email@example.org"
   
+# Users
+users:
+  - { username: "testuser", password: "changeme", email: "testuser@example.com", role: "admin" }
+  
+# I18N
+i18n:
+  locales:
+    - en
+    - de
+  defaultLocale: en
+  
 # Application Settings
 app:
   name: "IFTTT-Elasticsearch"
   description: "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you."
+  options:
+    forceHTTPS: false
+    httpServer:
+      port: 3000
+    httpsServer:
+      keyfile: ""
+      certfile: ""
+      port: 3443
+    jsExtension: 'js'
   ui:
     theme:
       baseColor: "light-blue lighten-1"
       buttonColor: "light-blue darken-1"
       textColor: "light-blue-text darken-2"
-    recent:
-      style: cards
     search:
       style: cards
+    stream:
+      style: cards
+      searchTerm: "*"
+      sort: "timestamp:desc"
+      resultSize: 12
+    home:
+      slider:
+        resultSize: 8
+        searchTerm: "* +image:*"
+        sort: "timestamp:desc"
+    feed:
+      resultSize: 10
+      searchTerm: "*"
+      sort: "timestamp:desc"
     github:
       enable: true
       repository: "magdev/ifttt-elasticsearch"
@@ -60,18 +92,8 @@ elasticsearch:
 session:
   secret: verysecretsessionkey
   
-# Users
-users:
-  - { username: "testuser", password: "changeme", email: "testuser@example.com", role: "admin" }
-  
 # Cache Settings
 cache:
   maxAge: 2592000000
   
-# I18N
-i18n:
-  locales:
-    - en
-    - de
-  defaultLocale: en
   

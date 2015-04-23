@@ -51,6 +51,7 @@ module.exports = function(grunt) {
                 src: [ 'lib/**/*.js' ]
             }
         },
+        
         watch: {
             gruntfile: {
                 files: '<%= jshint.gruntfile.src %>',
@@ -59,8 +60,21 @@ module.exports = function(grunt) {
             lib: {
                 files: '<%= jshint.lib.src %>',
                 tasks: [ 'jshint:lib' ]
+            },
+            less: {
+                files: 'app/less/*.less',
+                tasks: [ 'less:dist' ]
+            },
+            locales: {
+                files: 'app/locales/*.json',
+                tasks: [ 'jsonlint' ]
+            },
+            frontend: {
+                files: 'public/js/*.js',
+                tasks: [ 'uglify:all' ]
             }
         },
+        
         simplemocha: {
             options: {
                 globals: ['expect'],
@@ -73,19 +87,39 @@ module.exports = function(grunt) {
                 src: ['test/**/*_test.js'] 
             }
         },
+        
         less: {
             options:{
                 compress:true
             },
             dist: {
                 files: {
-                    '<%= outputdir %>/public/css/styles.css': 'less/styles.less'
+                    '<%= outputdir %>/public/css/styles.css': 'app/less/styles.less'
+                }
+            }
+        },
+        
+        uglify: {
+            options: {
+                sourceMap: true,
+                sourceMapIncludeSources: false,
+                sourceMapRoot: 'public/js/',
+                preserveComments: false,
+                quoteStyle: 1,
+                mangle: {
+                    except: ['jQuery', 'Share']
+                }
+            },
+            all: {
+                files: {
+                    'public/js/app.min.js': ['public/js/app.js'],
+                    'public/js/push.min.js': ['public/js/push.js']
                 }
             }
         }
     });
 
-    grunt.registerTask('default', [ 'less', 'jshint', 'jsonlint', 'simplemocha' ]);
-    grunt.registerTask('build', [ 'less', 'jshint', 'jsonlint' ]);
+    grunt.registerTask('default', [ 'less', 'uglify', 'jshint', 'jsonlint', 'simplemocha' ]);
+    grunt.registerTask('build', [ 'less', 'uglify', 'jshint', 'jsonlint' ]);
     grunt.registerTask('test', [ 'jshint', 'jsonlint', 'simplemocha' ]);
 };

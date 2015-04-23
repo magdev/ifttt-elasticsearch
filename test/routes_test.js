@@ -25,19 +25,29 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
  
-// Default layout measures
-@default-padding:               20px;
+process.env.NODE_CONFIG_DIR = __dirname + '/../config';
+process.env.NODE_ENV = 'test';
 
-// Headroom
-@headromm-transition:           transform 300ms linear;
+var request = require('supertest'), 
+    express = require('express'),
+    app = require('../app');
 
-// Slider
-@slider-title-background:       rgba(64, 64, 64, .5);
-@slider-title-shadow-color:     #333;
 
-// Table
-@table-condensed-padding:       5px;
+/**
+ * Test ifttt webhook
+ */
+describe('routes', function() {
 
-// Card
-@card-title-background:         @slider-title-background;
-@card-title-shadow-color:       @slider-title-shadow-color;
+    it('GET /', function(done) {
+        request(app)
+	        .get('/')
+	        .expect(200, done);
+    });
+    
+    it('GET /login', function(done) {
+        request(app)
+            .get('/login')
+            .expect(200, done);
+    });
+})
+    

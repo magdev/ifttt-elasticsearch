@@ -27,26 +27,24 @@
 
 # Owner Settings
 owner:
-  name: "Your Name"
+  name: "LocalSearch Test"
   email: "your-email@example.org"
   
 # Application Settings
 app:
-  name: "IFTTT-Elasticsearch"
+  name: "IFTTT-ES"
   description: "Connect your personal elasticsearch-server to IFTTT and capture the contents that matters to you."
-  options:
-    forceHTTPS: true
-    jsExtension: 'min.js'
   
 # Elasticsearch Settings
 elasticsearch:
-  host: "es-prod.example.org"
+  host: "localhost:9200"
+  log: error
   index: 
-    name: "your-index"
+    name: "ifttt-test"
   
 # Session Settings
 session:
-  secret: verysecretsessionkey
+  secret: "testsession"
   
 # Users
 users:

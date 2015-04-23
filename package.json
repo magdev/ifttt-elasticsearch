@@ -7,7 +7,7 @@
         "search",
         "indexing"
     ],
-    "version":"0.1.2",
+    "version":"0.1.3",
     "homepage":"https://github.com/magdev/ifttt-elasticsearch",
     "bugs":{
         "url":"https://github.com/magdev/ifttt-elasticsearch/issues",
@@ -27,7 +27,7 @@
         "start":"node ./bin/www",
         "debug-start":"node --debug=9222 ./bin/www",
         "postinstall":"HOME=$HOME/app-root/runtime/repo && bower update",
-        "prepublish":"node_modules/.bin/grunt build",
+        "prepublish":"node_modules/.bin/grunt build && cd public/assets/jquery-ias && npm update && node_modules/.bin/grunt build",
         "test":"grunt test"
     },
     "dependencies":{
@@ -43,6 +43,7 @@
         "express":"~4.11.1",
         "express-ifttt-webhook":"~0.2.3",
         "gnu-terry-pratchett":"^0.0.2",
+        "grunt-contrib-concat":"^0.5.1",
         "i18n":"^0.5.0",
         "jade":"*",
         "js-striphtml":"^1.1.2",
@@ -60,19 +61,20 @@
     },
     "devDependencies":{
         "bower":"*",
+        "express":"4.*",
         "grunt-cli":"*",
         "grunt-contrib-jshint":"*",
-        "grunt-contrib-watch":"*",
         "grunt-contrib-less":"*",
+        "grunt-contrib-uglify":"^0.9.1",
+        "grunt-contrib-watch":"*",
         "grunt-jsonlint":"*",
-        "load-grunt-tasks":"*",
-        "time-grunt":"*",
+        "grunt-simple-mocha":"*",
         "jshint-stylish":"*",
+        "load-grunt-tasks":"*",
+        "matchdep":"*",
         "mocha":"*",
         "supertest":"*",
-        "grunt-simple-mocha":"*",
-        "express":"4.*",
-        "matchdep":"*"
+        "time-grunt":"*"
     },
     "bin":{
         "ifttt-es":"./bin/cli"

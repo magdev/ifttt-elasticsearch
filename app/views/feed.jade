@@ -1,5 +1,5 @@
 doctype xml
-rss(version='2.0')
+rss(version='2.0', xmlns:atom='http://www.w3.org/2005/Atom', xmlns:opensearch='http://a9.com/-/spec/opensearch/1.1/')
   channel
     title #{appdata.name}
     description #{__(appdata.description)}
@@ -9,6 +9,11 @@ rss(version='2.0')
     image
       url #{baseurl}/img/icon/icon-196.png
       link= baseurl
+    opensearch:totalResults #{body.hits.total}
+    opensearch:startIndex #{startIndex}
+    opensearch:itemsPerPage #{size}
+    opensearch:Query(role='request', searchTerms='#{queryTerm}', startPage='1')
+    atom:link(rel='search', href='#{baseurl}/opensearch.xml', type='application/opensearchdescription+xml', title='#{appdata.name} Search')
     each doc in documents
       item
         title #{doc._source.title}
