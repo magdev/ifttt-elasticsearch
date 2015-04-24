@@ -99,6 +99,16 @@ module.exports = function(grunt) {
             }
         },
         
+        concat: {
+            options: {
+                separator: ';'
+            },
+            ias: {
+                src: ['public/assets/jquery-ias/src/callbacks.js', 'public/assets/jquery-ias/src/jquery-ias.js', 'public/assets/jquery-ias/src/extension/*.js'],
+                dest: 'public/assets/jquery-ias/dist/jquery-ias.js'
+            }
+        },
+        
         uglify: {
             options: {
                 sourceMap: true,
@@ -112,6 +122,7 @@ module.exports = function(grunt) {
             },
             all: {
                 files: {
+                    'public/assets/jquery-ias/dist/jquery-ias.min.js': ['public/assets/jquery-ias/dist/jquery-ias.js'],
                     'public/js/app.min.js': ['public/js/app.js'],
                     'public/js/push.min.js': ['public/js/push.js']
                 }
