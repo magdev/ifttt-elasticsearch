@@ -27,7 +27,7 @@
         "start":"node ./bin/www",
         "debug-start":"node --debug=9222 ./bin/www",
         "postinstall":"bower install",
-        "prepublish":"node_modules/.bin/grunt build && cd public/assets/jquery-ias && npm update && node_modules/.bin/grunt build",
+        "prepublish":"node_modules/.bin/grunt build",
         "test":"grunt test"
     },
     "dependencies":{
