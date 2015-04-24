@@ -131,6 +131,6 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('default', [ 'less', 'uglify', 'jshint', 'jsonlint', 'simplemocha' ]);
-    grunt.registerTask('build', [ 'less', 'uglify', 'jshint', 'jsonlint' ]);
+    grunt.registerTask('build', [ 'less', 'concat:ias', 'uglify', 'jshint', 'jsonlint' ]);
     grunt.registerTask('test', [ 'jshint', 'jsonlint', 'simplemocha' ]);
 };
