@@ -19,13 +19,15 @@
     .row
       .col.s10
         .card-date.grey-text.lighten-1 
-          em: small(title=row._source.timestamp) #{__('%s from %s', moment(new Date(row._source.timestamp)).fromNow(), row._source.datasource)}
-      .col.s2.right-align
-        a.dropdown-button.share-button.grey-text.lighten-1(href='!#', data-activates='share-#{row._id}')
-          i.mdi-social-share
-        ul.dropdown-content.share-content(id='share-#{row._id}')
-          li: a.grey-text.lighten-1(href='!#', data-share-google-plus, data-share-url=row._source.url) Google+
-          li: a.grey-text.lighten-1(href='!#', data-share-twitter, data-share-text=row._source.title, data-share-url=row._source.url) Twitter
+          em: time(title=row._source.timestamp, datetime=row._source.timestamp) #{__('%s from %s', moment(new Date(row._source.timestamp)).fromNow(), row._source.datasource)}
+      if (appdata.ui.options.sharing.enable)
+        .col.s2.right-align
+          a.dropdown-button.share-button.grey-text.lighten-1(href='!#', data-activates='share-#{row._id}', data-constrainwidth='false', data-beloworigin='true')
+            i.mdi-social-share
+          ul.dropdown-content.share-content(id='share-#{row._id}')
+            li: a.grey-text.lighten-1(href='!#', data-share-google-plus, data-share-url=row._source.url) Google+
+            li: a.grey-text.lighten-1(href='!#', data-share-twitter, data-share-text=row._source.title, data-share-url=row._source.url) Twitter
+      
     .card-content.darkgrey-text
       - if ((!row._source.image || !imageNotBlank(row._source.image)) && !row._source.publicUrl)
         if row._type != 'message' && row._type != 'media'

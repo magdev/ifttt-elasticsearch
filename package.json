@@ -7,7 +7,7 @@
         "search",
         "indexing"
     ],
-    "version":"0.1.3",
+    "version":"0.1.4",
     "homepage":"https://github.com/magdev/ifttt-elasticsearch",
     "bugs":{
         "url":"https://github.com/magdev/ifttt-elasticsearch/issues",
@@ -51,12 +51,14 @@
         "merge":"^1.2.0",
         "moment":"^2.9.0",
         "morgan":"~1.5.1",
-        "node-read":"^0.1.6",
         "pagination":"^0.4.3",
         "passport":"^0.2.1",
         "passport-local":"^1.0.0",
+        "request":"^2.55.0",
         "serve-favicon":"~2.2.0",
+        "unfluff":"^0.10.0",
         "validator":"^3.36.0",
+        "worker-farm":"^1.2.0",
         "yaml":"*"
     },
     "devDependencies":{

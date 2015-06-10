@@ -1,13 +1,3 @@
 {
-    "number_of_shards":"3",
-    "analysis":{
-        "analyzer":{
-	        "html":{
-	            "type":"custom",
-	            "char_filter":["html_strip"],
-	            "tokenizer":"standard",
-	            "filter":["lowercase"]
-	        }
-	    }
-	}
+    "number_of_shards":"5"
 }

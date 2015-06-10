@@ -1,25 +1,27 @@
 (function($) {
     var bindEventHandlers = function(elements) {
+            var deleteCallback = function(ev) {
+                    ev.preventDefault();
+                    if (confirm('Are you sure?')) {
+                        var item = $(this).closest('.item').get(0);
+                        $.post('/delete', item.dataset, function(result) {
+                            $(item).closest('.col').fadeOut({
+                                done: function(result) {
+                                    $(this).remove();
+                                },
+                                fail: function(result) {
+                                    toast(result.message, 5000, 'rounded');
+                                }
+                            });
+                        });
+                    }
+                };
+            
             $(elements).find('.delete').each(function() {
-		        $(this).click(function(ev) {
-		            ev.preventDefault();
-		            if (confirm('Are you sure?')) {
-		                var item = $(this).closest('.item').get(0);
-		                $.post('/delete', item.dataset, function(result) {
-		                    $(item).closest('.col').fadeOut({
-		                        done: function(result) {
-		                            $(this).remove();
-		                        },
-		                        fail: function(result) {
-		                            toast(result.message, 5000, 'rounded');
-		                        }
-		                    });
-		                });
-		            }
-		        });
+		        $(this).off(deleteCallback).click(deleteCallback);
 		    });
 		    
-		    $(elements).find('.share-button').dropdown({
+            $(elements).find('.share-button').dropdown({
 		        inDuration: 300,
 		        outDuration: 225,
 		        constrainWidth: false,
@@ -28,6 +30,12 @@
 		        gutter: 0,
 		        belowOrigin: true
 		    });
+	    },
+	    
+	    updateTimestamps = function() {
+	        $('time').each(function(el) {
+	            moment(new Date($(this).attr('datetime'))).fromNow();
+	        });
 	    };
     
 	$('.headroom').click(function(ev) {
@@ -71,20 +79,17 @@
         pagination: '.pagination',
         next: '.paginator-next',
         item: '.infsc-item',
-        delay: 500
+        delay: 0
     });
-    ias.extension(new IASSpinnerExtension());
+    //ias.extension(new IASSpinnerExtension());
     ias.extension(new IASTriggerExtension({ 
-        offset: 100,
+        offset: 10,
         prevText: UILocale.ias.prevText,
         text: UILocale.ias.nextText
     }));
     ias.extension(new IASPagingExtension());
     ias.extension(new IASHistoryExtension({
         prev: '.paginator-prev'
-    }));
-    ias.extension(new IASNoneLeftExtension({
-        text: UILocale.ias.noneLeft
     }));
     ias.on('loaded', function(data, items) {
         bindEventHandlers(items);
@@ -100,4 +105,6 @@
         interval: 5000
     });
     $('.collapsible').collapsible();
+    
+    setInterval(updateTimestamps, 60000);
 })(jQuery);

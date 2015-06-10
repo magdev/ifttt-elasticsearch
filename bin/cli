@@ -38,14 +38,14 @@ var program = require('commander'),
 	es = new elasticsearch.Client(config.elasticsearch),
 	
 	scrapeDocument = function(doc) {
-    	scraper(doc._source.url, function(error, article) {
+    	scraper(doc._source.url, function(error, data) {
     		es.update({
     			index: config.elasticsearch.index.name,
 				type: doc._type,
 				id: doc._id,
 				body: {
 					doc: {
-						fullpage: strip.stripTags(article.content)
+						fullpage: strip.stripTags(data.text)
 					}
 				}
     		}, function(error, response) {

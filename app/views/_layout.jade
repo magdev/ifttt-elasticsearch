@@ -26,16 +26,17 @@ html
         block body
         
         if (user && !disableAddButton)
-          .fixed-action-btn#share-button(style='bottom: 45px; right: 24px;')
-            a.btn-floating.btn-large.waves-effect.waves-light.btn-add(class=appdata.ui.theme.buttonColor)
+          .fixed-action-btn#share-button(style='bottom: 20px; right: 24px;')
+            a.btn-floating.btn-large.waves-effect.waves-circle.waves-light.btn-add(class=appdata.ui.theme.buttonColor)
               i.mdi-content-add
         if (user)
           include _parts/modal/info.jade
+          //-include _parts/modal/add.jade
         
     block footer
     
     include _parts/locales.jade
-    script(src='/assets/jquery/jquery.min.js')
+    script(src='/assets/jquery/dist/jquery.min.js')
     script(src='/assets/materialize/dist/js/materialize.min.js')
     script(src='/assets/jquery-ias/dist/jquery-ias.min.js')
     script(src='/assets/headroom.js/dist/headroom.min.js')
