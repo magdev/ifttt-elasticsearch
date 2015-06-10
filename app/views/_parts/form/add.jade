@@ -5,9 +5,17 @@ form(action='/push', method='post')
       label(for='url') #{__('Enter an URL')}
   .row
     .col.s12
-      .preview
+      #data-container(style='display:none')
+        .card
+          .card-image(style='display:none')
+            img(src='')
+            span.card-title 
+          .card-content.grey-text
+            strong.card-title.grey-text
+            p.card-description
     input#title(type='hidden', name='title')
     input#description(type='hidden', name='description')
+    input#text(type='hidden', name='text')
     input#image(type='hidden', name='image')
     input#type(type='hidden', name='type', value='common')
     input#datasource(type='hidden', name='datasource', value='web')
@@ -15,3 +23,5 @@ form(action='/push', method='post')
   .row
     .col.s12.center-align
       button.waves-effect.waves-light.btn.btn-submit.btn-large(type='submit', disabled, class=appdata.ui.theme.buttonColor) #{__('Push')} 
+      | &nbsp;
+      button.waves-effect.waves-light.btn.btn-abort.btn-large(type='button', class=appdata.ui.theme.buttonDefaultColor) #{__('Close')} 

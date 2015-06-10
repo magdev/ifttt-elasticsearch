@@ -19,6 +19,6 @@
         "moment":"~2.9.0",
         "share.js":"~0.0.1",
         "headroom.js":"~0.7.0",
-        "jquery-ias":"~2.2.0"
+        "jquery-ias":"~2.2.1"
     }
 }

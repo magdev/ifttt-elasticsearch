@@ -37,9 +37,9 @@ users:
 # I18N
 i18n:
   locales:
-    - en
-    - de
-  defaultLocale: en
+    - "en"
+    - "de"
+  defaultLocale: "en"
   
 # Application Settings
 app:
@@ -58,11 +58,12 @@ app:
     theme:
       baseColor: "light-blue lighten-1"
       buttonColor: "light-blue darken-1"
+      buttonDefaultColor: "white grey-text darken-1"
       textColor: "light-blue-text darken-2"
     search:
-      style: cards
+      style: "cards"
     stream:
-      style: cards
+      style: "cards"
       searchTerm: "*"
       sort: "timestamp:desc"
       resultSize: 12
@@ -79,18 +80,21 @@ app:
       enable: true
       repository: "magdev/ifttt-elasticsearch"
       cdn: "cdn.rawgit.com"
+    options:
+      sharing:
+        enable: true
     
 # Elasticsearch Settings  
 elasticsearch:
   host: "es.example.org"
   log: error
   index:
-    name: ifttt
-    type: common
+    name: "iftttes"
+    type: "common"
   
 # Session Settings
 session:
-  secret: verysecretsessionkey
+  secret: "verysecretsessionkey"
   
 # Cache Settings
 cache:

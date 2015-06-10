@@ -7,10 +7,7 @@
             },
             "description":{
                 "type":"string", 
-                "store":true,
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "store":true
             },
             "datasource":{
                 "type":"string", 
@@ -34,15 +31,16 @@
 	            "type":"date",
                 "store":true 
 	        },
+            "update_timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
 	        "username":{
                 "type":"string", 
                 "store":true
             },
             "fullpage": {
-	            "type":"string",
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+	            "type":"string"
             },
             "public":{
                 "type":"boolean",
@@ -55,10 +53,7 @@
         "properties":{
             "description":{
                 "type":"string", 
-                "store":true,
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "store":true
             },
             "datasource":{
                 "type":"string", 
@@ -77,6 +72,10 @@
                 "type":"date",
                 "store":true 
             },
+            "update_timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
             "username":{
                 "type":"string", 
                 "store":true
@@ -92,10 +91,7 @@
         "properties":{
             "description":{
                 "type":"string", 
-                "store":true,
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "store":true
             },
             "embed":{
                 "type":"string", 
@@ -119,6 +115,10 @@
                 "type":"date",
                 "store":true 
             },
+            "update_timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
             "username":{
                 "type":"string", 
                 "store":true
@@ -138,10 +138,7 @@
             },
             "description":{
                 "type":"string", 
-                "store":true,
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "store":true
             },
             "datasource":{
                 "type":"string", 
@@ -165,15 +162,16 @@
                 "type":"date",
                 "store":true 
             },
+            "update_timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
             "username":{
                 "type":"string", 
                 "store":true
             },
             "fullpage": {
-                "type":"string",
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "type":"string"
             },
             "public":{
                 "type":"boolean",
@@ -210,15 +208,16 @@
                 "type":"date",
                 "store":true 
             },
+            "update_timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
             "username":{
                 "type":"string", 
                 "store":true
             },
             "fullpage": {
-                "type":"string",
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "type":"string"
             },
             "public":{
                 "type":"boolean",
@@ -254,6 +253,10 @@
                 "type":"date",
                 "store":true 
             },
+            "update_timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
             "username":{
                 "type":"string", 
                 "store":true
@@ -283,15 +286,16 @@
                 "type":"date",
                 "store":true 
             },
+            "update_timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
             "username":{
                 "type":"string", 
                 "store":true
             },
             "fullpage": {
-                "type":"string",
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "type":"string"
             },
             "public":{
                 "type":"boolean",
@@ -308,10 +312,7 @@
             },
             "description":{
                 "type":"string", 
-                "store":true,
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "store":true
             },
             "datasource":{
                 "type":"string", 
@@ -343,15 +344,16 @@
                 "type":"date",
                 "store":true 
             },
+            "update_timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
             "username":{
                 "type":"string", 
                 "store":true
             },
             "fullpage": {
-                "type":"string",
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "type":"string"
             },
             "public":{
                 "type":"boolean",
@@ -368,10 +370,7 @@
             },
             "description":{
                 "type":"string", 
-                "store":true,
-                "index":"analyzed",
-                "analyzer":"html",
-                "index_analyzer":"html"
+                "store":true
             },
             "datasource":{
                 "type":"string", 
@@ -387,6 +386,10 @@
                 "index":"not_analyzed"
             },
             "timestamp":{ 
+                "type":"date",
+                "store":true 
+            },
+            "update_timestamp":{ 
                 "type":"date",
                 "store":true 
             },

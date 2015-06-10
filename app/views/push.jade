@@ -2,14 +2,14 @@ doctype html
 html
   head(profile='http://a9.com/-/spec/opensearch/1.1/')
     include _parts/header.jade
-    link(rel='stylesheet', href='https://#{appdata.ui.github.cdn}/markserbol/urlive/master/jquery.urlive.css')
     title #{__(title)} | #{appdata.name}
     
   body
     header
-      nav(class=appdata.ui.theme.baseColor, role='navigation')
-        .nav-wrapper.container
-          span#logo-container.brand-logo.truncate #{__('Push to %s', appdata.name)}
+      .navbar-fixed
+        nav(class=appdata.ui.theme.baseColor, role='navigation')
+          .nav-wrapper.container
+            span#logo-container.brand-logo.truncate #{__('Push to %s', appdata.name)}
           
     main
       .container
@@ -22,5 +22,4 @@ html
         
     script(src='/assets/jquery/dist/jquery.min.js')
     script(src='/assets/materialize/dist/js/materialize.min.js')
-    script(src='https://#{appdata.ui.github.cdn}/markserbol/urlive/master/jquery.urlive.min.js')
     script(src='/js/push.#{appdata.options.jsExtension}')
